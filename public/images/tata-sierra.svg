@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07182e" />
+      <stop offset="100%" stop-color="#0f2b4e" />
+    </linearGradient>
+    <linearGradient id="sierraPaint" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="50%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#c2410c" />
+    </linearGradient>
+    <linearGradient id="alpineGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" fill="url(#bg)" />
+  <!-- Showroom light floor -->
+  <polygon points="0,260 600,260 600,360 0,360" fill="#040d1a" />
+  <ellipse cx="300" cy="285" rx="240" ry="16" fill="#020617" opacity="0.9" />
+
+  <!-- Badge -->
+  <rect x="30" y="25" width="120" height="28" rx="6" fill="#0B1F3A" stroke="#23426d" />
+  <text x="90" y="44" font-family="Inter, sans-serif" font-weight="900" font-size="12" fill="#FF6B1A" text-anchor="middle">TATA SIERRA</text>
+
+  <!-- Car Silhouette -->
+  <g transform="translate(60, 80)">
+    <!-- Main Body -->
+    <path d="M 80,180 Q 120,130 160,180 L 360,180 Q 400,130 440,180 L 470,175 C 475,150 470,120 445,105 L 420,80 L 340,25 L 180,25 L 110,80 L 60,105 C 45,125 50,155 80,180 Z" fill="url(#sierraPaint)" />
+    
+    <!-- Alpine Rear Glass (Signature Sierra Feature) -->
+    <path d="M 280,30 L 335,30 L 415,80 L 435,105 L 280,105 Z" fill="url(#alpineGlass)" stroke="#0f172a" stroke-width="3" />
+    <!-- Front Cabin Window -->
+    <path d="M 185,30 L 270,30 L 270,105 L 118,105 Z" fill="url(#alpineGlass)" stroke="#0f172a" stroke-width="3" />
+
+    <!-- Full Width LED Horizon Lightbar -->
+    <line x1="58" y1="105" x2="120" y2="103" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+    <circle cx="58" cy="105" r="4" fill="#38bdf8" />
+
+    <!-- Wheels -->
+    <circle cx="140" cy="180" r="34" fill="#020617" stroke="#475569" stroke-width="5" />
+    <circle cx="140" cy="180" r="18" fill="#1e293b" stroke="#cbd5e1" stroke-width="3" />
+    <circle cx="420" cy="180" r="34" fill="#020617" stroke="#475569" stroke-width="5" />
+    <circle cx="420" cy="180" r="18" fill="#1e293b" stroke="#cbd5e1" stroke-width="3" />
+  </g>
+
+  <!-- Specs summary tag -->
+  <text x="300" y="335" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#94a3b8" text-anchor="middle">
+    Lifestyle SUV • Curved Alpine Glass • Petrol &amp; Electric • 2026 Launch
+  </text>
+</svg>

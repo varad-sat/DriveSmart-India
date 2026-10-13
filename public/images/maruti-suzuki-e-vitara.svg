@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="vitaraBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#021c1c" />
+      <stop offset="100%" stop-color="#063d3d" />
+    </linearGradient>
+    <linearGradient id="vitaraPaint" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="50%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" fill="url(#vitaraBg)" />
+  <polygon points="0,260 600,260 600,360 0,360" fill="#010f0f" />
+  <ellipse cx="300" cy="285" rx="240" ry="16" fill="#020617" opacity="0.9" />
+
+  <rect x="30" y="25" width="180" height="28" rx="6" fill="#0B1F3A" stroke="#14b8a6" />
+  <text x="120" y="44" font-family="Inter, sans-serif" font-weight="900" font-size="12" fill="#5eead4" text-anchor="middle">MARUTI SUZUKI E VITARA</text>
+
+  <!-- Born EV Platform with Aerodynamic Closed Grille -->
+  <g transform="translate(65, 80)">
+    <path d="M 75,180 Q 115,135 155,180 L 375,180 Q 415,135 455,180 L 485,175 C 490,145 470,115 445,100 L 390,75 L 330,30 L 190,30 L 125,75 L 60,110 C 45,130 50,160 75,180 Z" fill="url(#vitaraPaint)" />
+    <!-- Contrasting Dual-Tone Black Roof -->
+    <path d="M 185,30 L 335,30 L 395,75 L 120,75 Z" fill="#020617" />
+    <!-- Window Glass -->
+    <path d="M 195,35 L 330,35 L 385,75 L 435,100 L 135,100 Z" fill="#0f172a" stroke="#14b8a6" stroke-width="2" />
+    <!-- Y-Pattern Tri-LED Headlamp Signature -->
+    <line x1="55" y1="110" x2="110" y2="108" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+    <circle cx="55" cy="110" r="4" fill="#2dd4bf" />
+    <!-- Aerodynamic Alloy Wheels -->
+    <circle cx="135" cy="180" r="34" fill="#020617" stroke="#2dd4bf" stroke-width="4" />
+    <circle cx="435" cy="180" r="34" fill="#020617" stroke="#2dd4bf" stroke-width="4" />
+  </g>
+
+  <text x="300" y="335" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#99f6e4" text-anchor="middle">
+    Heartect-e Skateboard EV • LFP Blade Chemistry • AllGrip-e Dual Motor AWD Option
+  </text>
+</svg>

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="rainSky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050d1a" />
+      <stop offset="60%" stop-color="#0b1b33" />
+      <stop offset="100%" stop-color="#020813" />
+    </linearGradient>
+    <linearGradient id="wetAsphalt" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#111c2e" />
+      <stop offset="100%" stop-color="#020710" />
+    </linearGradient>
+    <linearGradient id="rainSpray" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="monsoonBeam" cx="0%" cy="50%" r="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="30%" stop-color="#fef08a" stop-opacity="0.6" />
+      <stop offset="70%" stop-color="#38bdf8" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#0B1F3A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background Monsoon Sky -->
+  <rect width="1200" height="630" fill="url(#rainSky)" />
+
+  <!-- Rain Streaks Angle (slanted heavy rain lines) -->
+  <g stroke="#93c5fd" stroke-width="1.5" opacity="0.35" stroke-linecap="round">
+    <line x1="120" y1="20" x2="80" y2="160" />
+    <line x1="260" y1="50" x2="220" y2="190" />
+    <line x1="420" y1="10" x2="380" y2="150" />
+    <line x1="580" y1="40" x2="540" y2="180" />
+    <line x1="740" y1="15" x2="700" y2="155" />
+    <line x1="900" y1="60" x2="860" y2="200" />
+    <line x1="1060" y1="25" x2="1020" y2="165" />
+    <line x1="80" y1="220" x2="40" y2="360" />
+    <line x1="220" y1="250" x2="180" y2="390" />
+    <line x1="380" y1="210" x2="340" y2="350" />
+    <line x1="540" y1="240" x2="500" y2="380" />
+    <line x1="700" y1="215" x2="660" y2="355" />
+    <line x1="860" y1="260" x2="820" y2="400" />
+    <line x1="1020" y1="225" x2="980" y2="365" />
+    <line x1="1160" y1="250" x2="1120" y2="390" />
+  </g>
+
+  <!-- Wet Asphalt Highway with Water Reflections -->
+  <polygon points="0,380 1200,380 1200,630 0,630" fill="url(#wetAsphalt)" />
+  <line x1="0" y1="380" x2="1200" y2="380" stroke="#334155" stroke-width="2" />
+  <line x1="0" y1="500" x2="1200" y2="500" stroke="#fbbf24" stroke-width="3" stroke-dasharray="25 20" opacity="0.6" />
+
+  <!-- Road Water Ripples -->
+  <g stroke="#60a5fa" stroke-width="1" opacity="0.4" fill="none">
+    <ellipse cx="300" cy="450" rx="40" ry="6" />
+    <ellipse cx="650" cy="540" rx="60" ry="8" />
+    <ellipse cx="950" cy="470" rx="35" ry="5" />
+  </g>
+
+  <!-- Water Spray Cloud Behind & Under Tires -->
+  <ellipse cx="440" cy="460" rx="60" ry="25" fill="url(#rainSpray)" opacity="0.7" />
+  <ellipse cx="880" cy="460" rx="70" ry="30" fill="url(#rainSpray)" opacity="0.8" />
+  <polygon points="340,460 260,420 280,480" fill="url(#rainSpray)" opacity="0.6" />
+  <polygon points="760,460 680,410 710,480" fill="url(#rainSpray)" opacity="0.7" />
+
+  <!-- Car Heading Left to Right in Heavy Rain -->
+  <g id="rainCar" transform="translate(180, 160)">
+    <!-- Wet Road Car Reflection -->
+    <ellipse cx="500" cy="310" rx="340" ry="16" fill="#020617" opacity="0.9" />
+
+    <!-- Car Body (Deep Royal Navy Metallic) -->
+    <path d="M 220,260 Q 280,200 340,260 L 680,260 Q 740,200 800,260 L 890,250 C 900,220 890,180 850,160 L 800,130 L 670,40 L 440,40 L 330,120 L 250,160 C 230,190 235,230 270,260 Z" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" />
+
+    <!-- Sleek Gloss Roofline -->
+    <path d="M 445,48 L 660,48 L 785,125 L 650,125 Z" fill="#0f172a" stroke="#60a5fa" stroke-width="3" />
+    <path d="M 430,52 L 350,125 L 635,125 L 440,52 Z" fill="#0f172a" stroke="#60a5fa" stroke-width="3" />
+
+    <!-- Wiper Sweep on Windshield -->
+    <path d="M 380,120 Q 420,70 470,60" stroke="#93c5fd" stroke-width="3" fill="none" opacity="0.8" />
+    <path d="M 410,122 Q 450,75 500,62" stroke="#93c5fd" stroke-width="3" fill="none" opacity="0.8" />
+
+    <!-- Powerful Headlamps Beam Cutting Rain Mist -->
+    <g transform="translate(870, 160)">
+      <polygon points="0,0 260,-40 280,120 0,20" fill="url(#monsoonBeam)" />
+      <circle cx="10" cy="10" r="16" fill="#ffffff" />
+    </g>
+
+    <!-- Taillights -->
+    <polygon points="240,165 260,170 250,190 235,185" fill="#ef4444" />
+
+    <!-- Front Wheel with Tyre Tread Details -->
+    <circle cx="770" cy="260" r="48" fill="#020617" stroke="#475569" stroke-width="6" />
+    <circle cx="770" cy="260" r="28" fill="#1e293b" stroke="#38bdf8" stroke-width="4" />
+    <circle cx="770" cy="260" r="10" fill="#cbd5e1" />
+
+    <!-- Rear Wheel -->
+    <circle cx="310" cy="260" r="48" fill="#020617" stroke="#475569" stroke-width="6" />
+    <circle cx="310" cy="260" r="28" fill="#1e293b" stroke="#38bdf8" stroke-width="4" />
+    <circle cx="310" cy="260" r="10" fill="#cbd5e1" />
+  </g>
+
+  <!-- Golden Rule Warning Box (Never Crank Flooded Engine) -->
+  <g transform="translate(60, 50)">
+    <rect width="450" height="90" rx="14" fill="#0B1F3A" fill-opacity="0.95" stroke="#ef4444" stroke-width="2" />
+    <circle cx="38" cy="45" r="18" fill="#ef4444" />
+    <text x="38" y="52" font-family="Inter, sans-serif" font-weight="900" font-size="20" fill="#ffffff" text-anchor="middle">!</text>
+    <text x="68" y="36" font-family="Inter, sans-serif" font-weight="900" font-size="14" fill="#f87171">MONSOON GOLDEN RULE #1</text>
+    <text x="68" y="56" font-family="Inter, sans-serif" font-weight="700" font-size="13" fill="#ffffff">Never Crank Engine in Standing Water</text>
+    <text x="68" y="74" font-family="Inter, sans-serif" font-weight="500" font-size="11" fill="#94a3b8">Prevents Hydrostatic Lock • Engine Protection Add-On Required</text>
+  </g>
+
+  <!-- Right Safety Checklist Badge -->
+  <g transform="translate(760, 50)">
+    <rect width="380" height="90" rx="14" fill="#0B1F3A" fill-opacity="0.95" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="25" y="32" font-family="Inter, sans-serif" font-weight="900" font-size="14" fill="#38bdf8">12 RAINY SEASON SAFEGUARDS</text>
+    <text x="25" y="54" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#ffffff">✓ Tyre Tread Depth &gt; 2.5 mm</text>
+    <text x="25" y="74" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#ffffff">✓ Underbody Anti-Rust Coating</text>
+    <text x="200" y="54" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#ffffff">✓ Fresh Wiper Blades</text>
+    <text x="200" y="74" font-family="Inter, sans-serif" font-weight="600" font-size="12" fill="#ffffff">✓ Headlamps On (No Hazards)</text>
+  </g>
+
+  <!-- Bottom Tagline -->
+  <text x="600" y="595" font-family="Inter, sans-serif" font-weight="600" font-size="13" fill="#94a3b8" text-anchor="middle">
+    DriveSmart India: Complete Guide to Protect Your Vehicle from Monsoon Waterlogging & Rust
+  </text>
+</svg>

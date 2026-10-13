@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="dusterBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14180e" />
+      <stop offset="100%" stop-color="#242b19" />
+    </linearGradient>
+    <linearGradient id="dusterPaint" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#854d0e" />
+      <stop offset="50%" stop-color="#ca8a04" />
+      <stop offset="100%" stop-color="#713f12" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" fill="url(#dusterBg)" />
+  <polygon points="0,260 600,260 600,360 0,360" fill="#0c1009" />
+  <ellipse cx="300" cy="285" rx="240" ry="16" fill="#020617" opacity="0.9" />
+
+  <rect x="30" y="25" width="180" height="28" rx="6" fill="#0B1F3A" stroke="#ca8a04" />
+  <text x="120" y="44" font-family="Inter, sans-serif" font-weight="900" font-size="12" fill="#facc15" text-anchor="middle">RENAULT DUSTER NEW-GEN</text>
+
+  <!-- Rugged High Clearance SUV Profile (217mm ground clearance) -->
+  <g transform="translate(65, 75)">
+    <!-- High Stance Underbody with Chunky Grey Skid Plates -->
+    <rect x="150" y="172" width="220" height="12" rx="4" fill="#475569" />
+    <path d="M 75,175 Q 115,120 155,175 L 375,175 Q 415,120 455,175 L 485,170 C 490,140 480,110 455,95 L 405,75 L 340,30 L 190,30 L 125,75 L 60,110 C 45,130 50,155 75,175 Z" fill="url(#dusterPaint)" />
+    <!-- Angular Glasshouse -->
+    <path d="M 195,35 L 335,35 L 395,75 L 440,95 L 135,95 Z" fill="#0f172a" stroke="#ca8a04" stroke-width="2" />
+    <!-- Signature Y-shaped DRLs -->
+    <path d="M 50,105 L 75,115 L 75,125 M 75,115 L 105,115" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" />
+    <!-- Chunky All-Terrain Wheels with High Clearance -->
+    <circle cx="135" cy="175" r="36" fill="#020617" stroke="#64748b" stroke-width="6" />
+    <circle cx="435" cy="175" r="36" fill="#020617" stroke="#64748b" stroke-width="6" />
+  </g>
+
+  <text x="300" y="335" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#fef08a" text-anchor="middle">
+    Rugged CMF-B Platform • 217 mm Ground Clearance • Bulletproof Suspension Comfort
+  </text>
+</svg>

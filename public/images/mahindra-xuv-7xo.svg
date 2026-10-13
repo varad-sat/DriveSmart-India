@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="xuvBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1106" />
+      <stop offset="100%" stop-color="#36220c" />
+    </linearGradient>
+    <linearGradient id="xuvPaint" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#451a03" />
+      <stop offset="50%" stop-color="#78350f" />
+      <stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" fill="url(#xuvBg)" />
+  <polygon points="0,260 600,260 600,360 0,360" fill="#0f0903" />
+  <ellipse cx="300" cy="285" rx="240" ry="16" fill="#020617" opacity="0.9" />
+
+  <rect x="30" y="25" width="160" height="28" rx="6" fill="#0B1F3A" stroke="#92400e" />
+  <text x="110" y="44" font-family="Inter, sans-serif" font-weight="900" font-size="12" fill="#f59e0b" text-anchor="middle">MAHINDRA XUV 7XO</text>
+
+  <!-- Large 7-Seater Family Powerhouse Profile -->
+  <g transform="translate(60, 75)">
+    <path d="M 80,185 Q 120,135 160,185 L 380,185 Q 420,135 460,185 L 490,180 C 495,150 485,115 460,95 L 415,75 L 350,25 L 180,25 L 115,75 L 55,110 C 40,135 45,165 80,185 Z" fill="url(#xuvPaint)" />
+    <!-- Extended 3-Row Glass Area -->
+    <path d="M 185,30 L 345,30 L 405,75 L 450,95 L 125,95 Z" fill="#0f172a" stroke="#d97706" stroke-width="2" />
+    <!-- Vertical Fang LED DRLs -->
+    <path d="M 50,110 L 75,105 L 70,135" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" />
+    <circle cx="50" cy="110" r="4" fill="#fbbf24" />
+    <!-- Large Alloy Wheels -->
+    <circle cx="140" cy="185" r="36" fill="#020617" stroke="#cbd5e1" stroke-width="6" />
+    <circle cx="440" cy="185" r="36" fill="#020617" stroke="#cbd5e1" stroke-width="6" />
+  </g>
+
+  <text x="300" y="335" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#fde68a" text-anchor="middle">
+    7-Seater Luxury SUV • 200 PS mStallion Turbo &amp; mHawk Diesel • AWD Top Trims
+  </text>
+</svg>

@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081426" />
+      <stop offset="50%" stop-color="#0f2747" />
+      <stop offset="100%" stop-color="#050c17" />
+    </linearGradient>
+    <linearGradient id="carBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6B1A" />
+      <stop offset="40%" stop-color="#ff8945" />
+      <stop offset="80%" stop-color="#e05307" />
+      <stop offset="100%" stop-color="#9a3400" />
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#142a4a" />
+      <stop offset="100%" stop-color="#08101e" />
+    </linearGradient>
+    <linearGradient id="lightBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#1e3a8a" stop-opacity="0.8" />
+    </linearGradient>
+    <radialGradient id="headlightGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fed7aa" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#fdba74" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#fb923c" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background Showroom Wall -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Architecture lines & ceiling lights -->
+  <line x1="0" y1="360" x2="1200" y2="360" stroke="#1e3a5f" stroke-width="2" />
+  <polygon points="150,0 250,0 350,360 50,360" fill="url(#lightBeam)" />
+  <polygon points="600,0 700,0 800,360 500,360" fill="url(#lightBeam)" />
+  <polygon points="950,0 1050,0 1150,360 850,360" fill="url(#lightBeam)" />
+
+  <!-- Ceiling Light Fixtures -->
+  <rect x="180" y="0" width="140" height="8" rx="4" fill="#ffffff" opacity="0.9" />
+  <rect x="630" y="0" width="140" height="8" rx="4" fill="#ffffff" opacity="0.9" />
+  <rect x="980" y="0" width="140" height="8" rx="4" fill="#ffffff" opacity="0.9" />
+
+  <!-- Polished Showroom Floor with Reflection -->
+  <polygon points="0,360 1200,360 1200,630 0,630" fill="url(#floorGrad)" />
+  <!-- Grid Lines on Tile Floor -->
+  <line x1="0" y1="440" x2="1200" y2="440" stroke="#233d63" stroke-width="1.5" stroke-opacity="0.4" />
+  <line x1="0" y1="520" x2="1200" y2="520" stroke="#233d63" stroke-width="2" stroke-opacity="0.5" />
+  <line x1="600" y1="360" x2="200" y2="630" stroke="#233d63" stroke-width="1.5" stroke-opacity="0.4" />
+  <line x1="600" y1="360" x2="1000" y2="630" stroke="#233d63" stroke-width="1.5" stroke-opacity="0.4" />
+
+  <!-- Background Showroom Signage -->
+  <rect x="80" y="100" width="280" height="60" rx="8" fill="#0B1F3A" stroke="#25436c" stroke-width="2" />
+  <text x="100" y="138" font-family="Inter, sans-serif" font-weight="900" font-size="24" fill="#ffffff">DRIVESMART</text>
+  <text x="265" y="138" font-family="Inter, sans-serif" font-weight="900" font-size="24" fill="#FF6B1A">INDIA</text>
+  <text x="100" y="152" font-family="Inter, sans-serif" font-weight="600" font-size="10" fill="#94a3b8" letter-spacing="2">AUTHORISED BUYING GUIDE</text>
+
+  <!-- Modern SUV Main Silhouette -->
+  <!-- Under-car Shadow -->
+  <ellipse cx="680" cy="485" rx="360" ry="22" fill="#020617" opacity="0.9" />
+
+  <!-- Car Body Profile -->
+  <g id="suv">
+    <!-- Wheel Arches and Underbody -->
+    <path d="M 360,460 Q 420,400 480,460 L 780,460 Q 840,400 900,460 L 1020,450 C 1030,420 1020,380 980,360 L 920,330 L 780,240 L 520,240 L 400,320 L 320,360 C 300,390 310,430 360,460 Z" fill="url(#carBody)" />
+    
+    <!-- Roof and Pillar Cutouts (Windows) -->
+    <path d="M 525,250 L 760,250 L 890,325 L 755,325 Z" fill="url(#glassGrad)" stroke="#1e293b" stroke-width="4" />
+    <path d="M 505,255 L 420,325 L 735,325 L 515,255 Z" fill="url(#glassGrad)" stroke="#1e293b" stroke-width="4" />
+
+    <!-- Sleek Character Line -->
+    <path d="M 330,365 Q 650,335 1010,365" stroke="#ffedd5" stroke-width="3" fill="none" opacity="0.6" />
+    <path d="M 360,400 Q 650,385 980,395" stroke="#7c2d12" stroke-width="2" fill="none" />
+
+    <!-- Headlamp Unit -->
+    <polygon points="325,355 380,350 365,375 320,370" fill="#ffffff" />
+    <circle cx="330" cy="365" r="50" fill="url(#headlightGlow)" />
+    <polygon points="320,360 100,330 80,480 325,370" fill="url(#headlightGlow)" opacity="0.3" />
+
+    <!-- Rear Tail Lamp -->
+    <path d="M 1000,360 L 1025,365 L 1015,385 L 990,380 Z" fill="#ef4444" />
+
+    <!-- Front Wheel -->
+    <circle cx="450" cy="460" r="54" fill="#0f172a" stroke="#334155" stroke-width="6" />
+    <circle cx="450" cy="460" r="34" fill="#1e293b" stroke="#cbd5e1" stroke-width="4" />
+    <circle cx="450" cy="460" r="14" fill="#94a3b8" />
+    <!-- Wheel Spokes -->
+    <line x1="450" y1="426" x2="450" y2="494" stroke="#cbd5e1" stroke-width="3" />
+    <line x1="416" y1="460" x2="484" y2="460" stroke="#cbd5e1" stroke-width="3" />
+    <line x1="426" y1="436" x2="474" y2="484" stroke="#cbd5e1" stroke-width="3" />
+    <line x1="426" y1="484" x2="474" y2="436" stroke="#cbd5e1" stroke-width="3" />
+
+    <!-- Rear Wheel -->
+    <circle cx="870" cy="460" r="54" fill="#0f172a" stroke="#334155" stroke-width="6" />
+    <circle cx="870" cy="460" r="34" fill="#1e293b" stroke="#cbd5e1" stroke-width="4" />
+    <circle cx="870" cy="460" r="14" fill="#94a3b8" />
+    <!-- Wheel Spokes -->
+    <line x1="870" y1="426" x2="870" y2="494" stroke="#cbd5e1" stroke-width="3" />
+    <line x1="836" y1="460" x2="904" y2="460" stroke="#cbd5e1" stroke-width="3" />
+    <line x1="846" y1="436" x2="894" y2="484" stroke="#cbd5e1" stroke-width="3" />
+    <line x1="846" y1="484" x2="894" y2="436" stroke="#cbd5e1" stroke-width="3" />
+  </g>
+
+  <!-- Happy Indian Family Silhouettes Standing at Showroom -->
+  <g id="family" fill="#cbd5e1" opacity="0.95">
+    <!-- Father -->
+    <circle cx="210" cy="300" r="16" />
+    <path d="M 195,322 C 190,360 190,440 190,480 L 205,480 L 210,410 L 215,480 L 230,480 C 230,440 230,360 225,322 Z" />
+    <!-- Mother with Dupatta Flow -->
+    <circle cx="255" cy="310" r="15" />
+    <path d="M 240,330 C 235,380 230,430 228,480 L 275,480 C 275,430 270,380 268,330 Z" />
+    <path d="M 245,335 Q 260,370 275,420" stroke="#FF6B1A" stroke-width="4" fill="none" />
+    <!-- Child holding hands -->
+    <circle cx="295" cy="360" r="11" />
+    <path d="M 285,375 C 285,410 282,440 282,480 L 308,480 C 308,440 305,410 305,375 Z" />
+    <!-- Arm connecting mother and child -->
+    <path d="M 265,350 L 290,375" stroke="#cbd5e1" stroke-width="5" stroke-linecap="round" />
+  </g>
+
+  <!-- Foreground Badge / Overlay Text -->
+  <g transform="translate(60, 520)">
+    <rect width="440" height="70" rx="14" fill="#0B1F3A" fill-opacity="0.92" stroke="#2d4a75" stroke-width="1.5" />
+    <circle cx="36" cy="35" r="18" fill="#FF6B1A" />
+    <path d="M 28,35 L 34,41 L 46,28" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="66" y="30" font-family="Inter, sans-serif" font-weight="800" font-size="15" fill="#ffffff">Car Buying Guide India (2026)</text>
+    <text x="66" y="50" font-family="Inter, sans-serif" font-weight="500" font-size="12" fill="#94a3b8">Budgeting • On-Road Realities • Showroom PDI Checklist</text>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "name": "DriveSmart India",
+  "description": "Your complete car buying guide for India. Compare fuel types, plan your first car purchase and learn simple car care tips. Start reading today!",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

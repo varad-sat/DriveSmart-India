@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="venueBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1526" />
+      <stop offset="100%" stop-color="#142642" />
+    </linearGradient>
+    <linearGradient id="venueRed" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b91c1c" />
+      <stop offset="50%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" fill="url(#venueBg)" />
+  <polygon points="0,260 600,260 600,360 0,360" fill="#040b14" />
+  <ellipse cx="300" cy="285" rx="240" ry="16" fill="#020617" opacity="0.9" />
+
+  <rect x="30" y="25" width="160" height="28" rx="6" fill="#0B1F3A" stroke="#334155" />
+  <text x="110" y="44" font-family="Inter, sans-serif" font-weight="900" font-size="12" fill="#ffffff" text-anchor="middle">HYUNDAI VENUE NEW</text>
+
+  <!-- Compact SUV Profile -->
+  <g transform="translate(70, 85)">
+    <path d="M 70,175 Q 110,130 150,175 L 340,175 Q 380,130 420,175 L 450,170 C 455,145 445,115 425,100 L 375,75 L 310,35 L 180,35 L 120,75 L 65,105 C 50,125 55,155 70,175 Z" fill="url(#venueRed)" />
+    <!-- Compact Glasshouse -->
+    <path d="M 185,40 L 305,40 L 365,75 L 415,100 L 130,100 Z" fill="#0f172a" stroke="#cbd5e1" stroke-width="2" />
+    <!-- Split Headlamps & Parametric Grille Line -->
+    <rect x="58" y="105" width="16" height="24" rx="4" fill="#ffffff" />
+    <line x1="58" y1="98" x2="110" y2="95" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+    <!-- Wheels -->
+    <circle cx="130" cy="175" r="32" fill="#020617" stroke="#94a3b8" stroke-width="5" />
+    <circle cx="400" cy="175" r="32" fill="#020617" stroke="#94a3b8" stroke-width="5" />
+  </g>
+
+  <text x="300" y="335" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#cbd5e1" text-anchor="middle">
+    Sub-4m Compact SUV • Level 1 ADAS • Dual Curved Screens • Frugal Diesel &amp; Turbo Petrol
+  </text>
+</svg>
