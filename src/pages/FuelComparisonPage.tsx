@@ -6,6 +6,7 @@ import { TableOfContents } from '../components/TableOfContents';
 import { RelatedArticles } from '../components/RelatedArticles';
 import { ReadingProgressBar } from '../components/ReadingProgressBar';
 import { ShareButtons } from '../components/ShareButtons';
+import { SEO_DATA } from '../data/seoKeywords';
 import { Calculator } from 'lucide-react';
 import {
   Calendar,
@@ -146,14 +147,17 @@ export const FuelComparisonPage: React.FC = () => {
     },
   ];
 
+  const seo = SEO_DATA['/blog/petrol-vs-diesel-vs-cng-vs-ev'];
+
   return (
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="Petrol vs Diesel vs CNG vs EV: Which Car to Buy in 2026?"
-        description="Petrol vs diesel vs CNG vs EV: compare running costs, mileage, maintenance and resale value to pick the right fuel type for you. Read the full guide."
+        title={seo.title}
+        description={seo.metaDescription}
         canonicalUrl="https://drivesmart-india.vercel.app/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india"
         ogImage="https://drivesmart-india.vercel.app/images/petrol-vs-diesel-vs-cng-vs-ev.webp"
+        keywords={`${seo.mainKeyword}, ${seo.relatedKeywords.join(', ')}`}
         type="article"
         schema={schema}
       />

@@ -163,7 +163,7 @@ export const FirstCarGuidePage: React.FC = () => {
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="First Car Buying Guide: 10 Steps for Indian Buyers"
+        title="First Car Buying Guide India: 10 Key Steps | DriveSmart"
         description="Our first car buying guide covers budgeting, car loans, test drives and insurance in 10 easy steps. Buy your first car with confidence. Read now."
         canonicalUrl="https://drivesmart-india.vercel.app/first-car-buying-guide-india-step-by-step"
         ogImage="https://drivesmart-india.vercel.app/images/first-car-buying-guide.webp"

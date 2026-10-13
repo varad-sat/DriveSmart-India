@@ -4,6 +4,7 @@ import { SEOHead } from '../components/SEOHead';
 import { SmartImage } from '../components/SmartImage';
 import { CARS_DATA, Car } from '../data/cars';
 import { useApp } from '../context/AppContext';
+import { SEO_DATA } from '../data/seoKeywords';
 import {
   Search,
   Filter,
@@ -139,22 +140,23 @@ export const CarsListingPage: React.FC<CarsListingPageProps> = ({ defaultFuel, d
     setSearchParams(new URLSearchParams(), { replace: true });
   };
 
-  // Dynamic Keyword-Rich Metadata based on active page filters
-  let pageTitle = 'New Cars in India 2026: Prices, Specs & Comparison | DriveSmart';
-  let pageDescription =
-    'Explore new cars launched in India in 2026. Filter by brand, fuel type, body style and budget from ₹5 to ₹35 lakh. Find your ideal ride today.';
+  const carsSeo = SEO_DATA['/cars'];
+
+  // Dynamic Keyword-Rich Metadata based on active page filters (Strict 50-60 char SEO title rules)
+  let pageTitle = carsSeo.title;
+  let pageDescription = carsSeo.metaDescription;
   let canonicalPath = 'https://drivesmart-india.vercel.app/new-cars-in-india-2026';
 
   if (selectedFuel !== 'All') {
-    pageTitle = `Best ${selectedFuel} Cars in India 2026: Prices, Range & Specs | DriveSmart`;
+    pageTitle = `Best ${selectedFuel} Cars in India 2026: Prices & Specs | DriveSmart`;
     pageDescription = `Compare all new ${selectedFuel} cars launched in India in 2026. Check ex-showroom prices, mileage, features, and owner reviews.`;
     canonicalPath = `https://drivesmart-india.vercel.app/new-cars-in-india-2026?fuel=${selectedFuel}`;
   } else if (selectedBodyType !== 'All') {
-    pageTitle = `Best ${selectedBodyType} Cars in India 2026: Prices & Models | DriveSmart`;
+    pageTitle = `Best ${selectedBodyType} Cars in India 2026: Prices | DriveSmart`;
     pageDescription = `Explore 2026 ${selectedBodyType} launches in India. Side-by-side comparison of seating, prices, and highway dynamics.`;
     canonicalPath = `https://drivesmart-india.vercel.app/new-cars-in-india-2026?body=${encodeURIComponent(selectedBodyType)}`;
   } else if (selectedBrand !== 'All') {
-    pageTitle = `${selectedBrand} Cars in India 2026: Prices, Features & Specs | DriveSmart`;
+    pageTitle = `${selectedBrand} Cars in India 2026: Prices & Specs | DriveSmart`;
     pageDescription = `Check all new 2026 ${selectedBrand} cars in India with latest on-road pricing estimates, features, and expert analysis.`;
     canonicalPath = `https://drivesmart-india.vercel.app/new-cars-in-india-2026?brand=${encodeURIComponent(selectedBrand)}`;
   }
@@ -193,6 +195,7 @@ export const CarsListingPage: React.FC<CarsListingPageProps> = ({ defaultFuel, d
         title={pageTitle}
         description={pageDescription}
         canonicalUrl={canonicalPath}
+        keywords={`${carsSeo.mainKeyword}, ${carsSeo.relatedKeywords.join(', ')}`}
         type="website"
         schema={schema}
       />
@@ -224,10 +227,10 @@ export const CarsListingPage: React.FC<CarsListingPageProps> = ({ defaultFuel, d
                 <span>2026 Indian Automotive Market</span>
               </span>
               <h1 className="text-3xl sm:text-4xl font-black text-[#0B1F3A] dark:text-white tracking-tight">
-                Latest Cars Launched in India (2026)
+                Explore the Latest Cars in India (2026 Launches)
               </h1>
               <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
-                Explore the latest passenger cars, born-electric crossovers, and family SUVs introduced to Indian roads. Filter by fuel, budget, or brand to shortlist your next vehicle.
+                Explore the <strong>latest cars in India</strong> across born-electric crossovers, family SUVs, and compact city runabouts. Review verified <strong>new car launches 2026</strong>, compare <strong>car prices in India</strong> from ₹5 Lakh to ₹35 Lakh, and filter by fuel, budget, or brand to shortlist your ideal ride.
               </p>
             </div>
 
@@ -431,7 +434,7 @@ export const CarsListingPage: React.FC<CarsListingPageProps> = ({ defaultFuel, d
                     <div className="relative">
                       <SmartImage
                         src={car.image}
-                        alt={car.imageAlt}
+                        alt={`${car.name} - latest cars in India: ${car.imageAlt}`}
                         width={600}
                         height={360}
                         fallbackText={car.name}
@@ -549,6 +552,22 @@ export const CarsListingPage: React.FC<CarsListingPageProps> = ({ defaultFuel, d
             })}
           </div>
         )}
+
+        {/* SEO H2 Section & Conclusion */}
+        <section className="mt-12 p-6 sm:p-8 bg-slate-100 dark:bg-slate-900/60 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-4">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#0B1F3A] dark:text-white">
+            Latest Cars in India: New Car Launches 2026 & Verified Prices
+          </h2>
+          <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200">
+            Guide to New Car Launches 2026 and Car Prices in India
+          </h3>
+          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Tracking <strong>new car launches 2026</strong> allows prospective buyers to compare competitive <strong>car prices in India</strong>, secure the best introductory launch discounts, and identify Bharat NCAP crash safety advancements before committing to showroom bookings.
+          </p>
+          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            In conclusion, browsing the <strong>latest cars in India</strong> on DriveSmart equips you with verified technical specifications, realistic loan budgets, and transparent insights for a hassle-free ownership journey.
+          </p>
+        </section>
       </div>
     </>
   );

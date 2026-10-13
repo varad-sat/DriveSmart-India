@@ -75,7 +75,7 @@ export const TransmissionGuidePage: React.FC = () => {
       dateModified: '2026-10-12',
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': 'https://drivesmart-india.vercel.app/manual-vs-automatic-cars-india',
+        '@id': 'https://drivesmart-india.vercel.app/manual-vs-automatic-cars-india-amt-cvt-dct',
       },
     },
     {
@@ -92,7 +92,7 @@ export const TransmissionGuidePage: React.FC = () => {
           '@type': 'ListItem',
           position: 2,
           name: 'Manual vs Automatic Cars in India',
-          item: 'https://drivesmart-india.vercel.app/manual-vs-automatic-cars-india',
+          item: 'https://drivesmart-india.vercel.app/manual-vs-automatic-cars-india-amt-cvt-dct',
         },
       ],
     },
@@ -114,9 +114,9 @@ export const TransmissionGuidePage: React.FC = () => {
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="Manual vs Automatic Cars in India: Transmission Guide"
+        title="Manual vs Automatic Cars in India: AMT vs DCT | DriveSmart"
         description="Manual vs automatic cars in India: compare AMT, CVT, DCT, and Torque Converter gearboxes for mileage, maintenance, city ease, and reliability."
-        canonicalUrl="https://drivesmart-india.vercel.app/manual-vs-automatic-cars-india"
+        canonicalUrl="https://drivesmart-india.vercel.app/manual-vs-automatic-cars-india-amt-cvt-dct"
         ogImage="https://drivesmart-india.vercel.app/images/manual-vs-automatic-cars-india.webp"
         type="article"
         schema={schema}

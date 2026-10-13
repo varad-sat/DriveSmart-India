@@ -8,6 +8,8 @@ interface SEOHeadProps {
   ogImage?: string;
   type?: 'website' | 'article';
   schema?: object | object[];
+  keywords?: string;
+  robots?: string;
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
@@ -17,12 +19,16 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   ogImage = 'https://drivesmart-india.vercel.app/images/car-buying-guide-india-hero.webp',
   type = 'article',
   schema,
+  keywords,
+  robots,
 }) => {
   return (
     <Helmet>
       {/* Standard Metadata */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      {keywords && <meta name="keywords" content={keywords} />}
+      {robots && <meta name="robots" content={robots} />}
       <link rel="canonical" href={canonicalUrl} />
 
       {/* OpenGraph Metadata */}

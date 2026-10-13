@@ -134,7 +134,7 @@ export const FuelCostCalculatorPage: React.FC = () => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'Fuel Running Cost Calculator India: Petrol vs EV vs CNG',
+    name: 'Car Fuel Cost Calculator India: Petrol vs EV | DriveSmart',
     applicationCategory: 'UtilityApplication',
     operatingSystem: 'All',
     description:
@@ -145,7 +145,7 @@ export const FuelCostCalculatorPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Fuel Running Cost Calculator India: Petrol vs EV vs CNG"
+        title="Car Fuel Cost Calculator India: Petrol vs EV | DriveSmart"
         description="Compare monthly and yearly driving costs for Petrol, Diesel, CNG, and Electric cars based on your monthly distance. Highlight the cheapest fuel with DriveSmart."
         canonicalUrl="https://drivesmart-india.vercel.app/tools/car-fuel-cost-calculator-india"
         type="website"

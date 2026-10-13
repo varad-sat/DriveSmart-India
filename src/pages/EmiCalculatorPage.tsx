@@ -85,7 +85,7 @@ export const EmiCalculatorPage: React.FC = () => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
-    name: 'Car Loan EMI Calculator India: Monthly Cost & Interest',
+    name: 'Car Loan EMI Calculator India: Monthly Cost | DriveSmart',
     applicationCategory: 'FinanceApplication',
     operatingSystem: 'All',
     description:
@@ -96,7 +96,7 @@ export const EmiCalculatorPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Car Loan EMI Calculator India: Monthly Cost & Interest"
+        title="Car Loan EMI Calculator India: Monthly Cost | DriveSmart"
         description="Calculate your car loan monthly EMI, total interest and down payment with our interactive sliders and donut chart. Plan your car finance with DriveSmart."
         canonicalUrl="https://drivesmart-india.vercel.app/tools/car-loan-emi-calculator-india"
         type="website"

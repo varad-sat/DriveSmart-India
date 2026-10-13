@@ -4,6 +4,7 @@ import { SEOHead } from '../components/SEOHead';
 import { SmartImage } from '../components/SmartImage';
 import { CARS_DATA, Car, getCarBySlug, getCarUrl } from '../data/cars';
 import { useApp } from '../context/AppContext';
+import { getCarPageSEO } from '../data/seoKeywords';
 import {
   Heart,
   Scale,
@@ -39,13 +40,10 @@ export const CarDetailPage: React.FC = () => {
       ? `₹${car.priceMinLakh.toFixed(2)} – ₹${car.priceMaxLakh.toFixed(2)} Lakh`
       : 'Price: to be confirmed';
 
-  // Title: 50-60 chars
-  const title = `${car.name} Price in India 2026: Specs & Review`.slice(0, 60);
-
-  // Meta Description: 140-160 chars
-  const description =
-    `Check approximate 2026 ex-showroom prices, fuel types, key features, pros and cons for the new ${car.name}. Plan your purchase with DriveSmart.`
-      .slice(0, 160);
+  // Read SEO metadata from seoKeywords generator
+  const carSeo = getCarPageSEO(car.name, car.slug);
+  const title = carSeo.title;
+  const description = carSeo.metaDescription;
 
   // Related cars (other cars from same brand or body type)
   const relatedCars = CARS_DATA.filter(
@@ -81,6 +79,7 @@ export const CarDetailPage: React.FC = () => {
         description={description}
         canonicalUrl={`https://drivesmart-india.vercel.app/cars/${car.seoSlug}`}
         ogImage={`https://drivesmart-india.vercel.app${car.image}`}
+        keywords={`${carSeo.mainKeyword}, ${carSeo.relatedKeywords.join(', ')}`}
         type="article"
         schema={schema}
       />
@@ -117,7 +116,7 @@ export const CarDetailPage: React.FC = () => {
               <div className="relative">
                 <SmartImage
                   src={car.image}
-                  alt={car.imageAlt}
+                  alt={`${car.name} price in India - ${car.bodyType} exterior styling, key ${car.name} features and design`}
                   width={800}
                   height={480}
                   fallbackText={car.name}
@@ -168,7 +167,7 @@ export const CarDetailPage: React.FC = () => {
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl font-black text-[#0B1F3A] dark:text-white tracking-tight leading-tight">
-                  {car.name}
+                  {car.name} Price in India, Specs & Features (2026)
                 </h1>
 
                 {/* Price display */}
@@ -184,8 +183,8 @@ export const CarDetailPage: React.FC = () => {
                   </div>
                 </div>
 
-                <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mt-4">
-                  {car.tagline}
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
+                  Check the latest <strong>{car.name} price in India</strong>, explore top <strong>{car.name} features</strong>, and review detailed <strong>{car.name} pros and cons</strong> before booking your vehicle. {car.tagline}
                 </p>
               </div>
 
@@ -266,7 +265,7 @@ export const CarDetailPage: React.FC = () => {
             {/* Key Features */}
             <section className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8">
               <h2 className="text-xl font-bold text-[#0B1F3A] dark:text-white mb-4">
-                Key Features & Technology Highlights
+                Key {car.name} Features & Technology Highlights
               </h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {car.keyFeatures.map((feature, idx) => (
@@ -284,7 +283,7 @@ export const CarDetailPage: React.FC = () => {
             {/* Pros and Cons Side-by-Side */}
             <section className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8">
               <h2 className="text-xl font-bold text-[#0B1F3A] dark:text-white mb-6">
-                Pros & Cons: What You Should Know
+                Detailed {car.name} Pros and Cons for Indian Buyers
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Pros */}
@@ -356,6 +355,16 @@ export const CarDetailPage: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Conclusion / Final Verdict */}
+        <section className="bg-slate-100 dark:bg-slate-900/60 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 mb-10 text-center">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+            {car.name} Price in India: Final Buying Verdict
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            In conclusion, the <strong>{car.name} price in India</strong> delivers strong competitive value when balanced against its rich {car.name} features and overall ownership comfort.
+          </p>
+        </section>
 
         {/* Related Cars Section */}
         {relatedCars.length > 0 && (

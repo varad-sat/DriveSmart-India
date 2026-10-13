@@ -7,7 +7,7 @@ export const NotFoundPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Page Not Found | DriveSmart India"
+        title="Page Not Found: 404 Error Guide | DriveSmart"
         description="The automotive guide you are looking for does not exist. Explore our car buying guides, fuel comparisons and 2026 car launches."
         canonicalUrl="https://drivesmart-india.vercel.app/404"
         type="website"

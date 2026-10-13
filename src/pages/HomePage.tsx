@@ -5,6 +5,7 @@ import { SmartImage } from '../components/SmartImage';
 import { CARS_DATA } from '../data/cars';
 import { searchContent, SearchResult } from '../data/searchIndex';
 import { useApp } from '../context/AppContext';
+import { SEO_DATA } from '../data/seoKeywords';
 import {
   Compass,
   Fuel,
@@ -197,13 +198,16 @@ export const HomePage: React.FC = () => {
     },
   ];
 
+  const homeSeo = SEO_DATA['/'];
+
   return (
     <>
       <SEOHead
-        title="Car Buying Guide India: Tips & Reviews | DriveSmart"
-        description="Your complete car buying guide for India. Compare fuel types, plan your first car purchase and learn simple car care tips. Start reading today!"
+        title={homeSeo.title}
+        description={homeSeo.metaDescription}
         canonicalUrl="https://drivesmart-india.vercel.app/"
         ogImage="https://drivesmart-india.vercel.app/images/car-buying-guide-india-hero.webp"
+        keywords={`${homeSeo.mainKeyword}, ${homeSeo.relatedKeywords.join(', ')}`}
         type="website"
         schema={schema}
       />
@@ -560,7 +564,7 @@ export const HomePage: React.FC = () => {
           <div className="max-w-4xl mx-auto pt-2">
             <SmartImage
               src="/images/car-buying-guide-india-hero.webp"
-              alt="Expressway with modern cars on an open Indian highway road"
+              alt="Comprehensive car buying guide India illustration showcasing latest cars in India 2026 on open expressway"
               width={1200}
               height={630}
               loading="lazy"
@@ -635,7 +639,7 @@ export const HomePage: React.FC = () => {
                 Market Rollout
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-                Latest Car Launches 2026
+                Browse Latest Cars in India 2026 Launches
               </h2>
             </div>
             <Link
@@ -728,7 +732,7 @@ export const HomePage: React.FC = () => {
         {/* Section 5: Why Beginners Trust Us */}
         <section id="why-trust-us" className="space-y-4">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-            Why Should Beginners Trust DriveSmart India?
+            Essential Car Tips for Beginners & Ownership Advice
           </h2>
           <p className="text-base text-slate-700 dark:text-slate-300 leading-relaxed">
             Finding genuine, unbiased car tips for beginners on the Indian internet can be challenging. Most dealership portals and sponsored influencer videos present promotional brochures disguised as reviews. At DriveSmart India, our editorial mission is centered exclusively on real consumer welfare, zero sales commissions, and pragmatic engineering facts.

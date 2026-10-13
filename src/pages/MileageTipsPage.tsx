@@ -75,7 +75,7 @@ export const MileageTipsPage: React.FC = () => {
       dateModified: '2026-10-12',
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': 'https://drivesmart-india.vercel.app/car-mileage-tips-india',
+        '@id': 'https://drivesmart-india.vercel.app/car-mileage-tips-india-boost-fuel-economy',
       },
     },
     {
@@ -92,7 +92,7 @@ export const MileageTipsPage: React.FC = () => {
           '@type': 'ListItem',
           position: 2,
           name: 'Car Mileage Tips India',
-          item: 'https://drivesmart-india.vercel.app/car-mileage-tips-india',
+          item: 'https://drivesmart-india.vercel.app/car-mileage-tips-india-boost-fuel-economy',
         },
       ],
     },
@@ -114,9 +114,9 @@ export const MileageTipsPage: React.FC = () => {
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="Car Mileage Tips India: 10 Proven Ways to Boost Fuel Economy"
+        title="Car Mileage Tips India: Boost Fuel Economy | DriveSmart"
         description="Learn how to increase car mileage in India: practical tips for tyre pressure, AC usage, highway cruising speeds, and stop-and-go city driving."
-        canonicalUrl="https://drivesmart-india.vercel.app/car-mileage-tips-india"
+        canonicalUrl="https://drivesmart-india.vercel.app/car-mileage-tips-india-boost-fuel-economy"
         ogImage="https://drivesmart-india.vercel.app/images/car-mileage-tips-india.webp"
         type="article"
         schema={schema}

@@ -21,6 +21,11 @@ import { InsuranceGuidePage } from './pages/InsuranceGuidePage';
 import { TransmissionGuidePage } from './pages/TransmissionGuidePage';
 import { MileageTipsPage } from './pages/MileageTipsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { BlogListingPage } from './pages/BlogListingPage';
+import { NewSuvsArticlePage } from './pages/NewSuvsArticlePage';
+import { ElectricCarsArticlePage } from './pages/ElectricCarsArticlePage';
+import { AboutPage } from './pages/AboutPage';
+import { ContactPage } from './pages/ContactPage';
 
 export default function App() {
   return (
@@ -34,6 +39,25 @@ export default function App() {
               <Routes>
                 {/* Home */}
                 <Route path="/" element={<HomePage />} />
+
+                {/* Blog Listing & Articles */}
+                <Route path="/blog" element={<BlogListingPage />} />
+                <Route
+                  path="/blog/new-suvs-in-india-2026"
+                  element={<NewSuvsArticlePage />}
+                />
+                <Route
+                  path="/blog/electric-cars-in-india-2026"
+                  element={<ElectricCarsArticlePage />}
+                />
+                <Route
+                  path="/blog/petrol-vs-diesel-vs-cng-vs-ev"
+                  element={<FuelComparisonPage />}
+                />
+
+                {/* About & Contact Pages */}
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
 
                 {/* Guides & Comparisons - Keyword Rich URLs & Aliases */}
                 <Route

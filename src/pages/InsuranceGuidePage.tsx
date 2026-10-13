@@ -76,7 +76,7 @@ export const InsuranceGuidePage: React.FC = () => {
       dateModified: '2026-10-12',
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': 'https://drivesmart-india.vercel.app/car-insurance-guide-india',
+        '@id': 'https://drivesmart-india.vercel.app/car-insurance-guide-india-zero-dep-explained',
       },
     },
     {
@@ -93,7 +93,7 @@ export const InsuranceGuidePage: React.FC = () => {
           '@type': 'ListItem',
           position: 2,
           name: 'Car Insurance Guide India',
-          item: 'https://drivesmart-india.vercel.app/car-insurance-guide-india',
+          item: 'https://drivesmart-india.vercel.app/car-insurance-guide-india-zero-dep-explained',
         },
       ],
     },
@@ -115,9 +115,9 @@ export const InsuranceGuidePage: React.FC = () => {
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="Car Insurance Guide India: Zero Dep, RTI & Engine Protect"
+        title="Car Insurance Guide India: Zero Dep Explained | DriveSmart"
         description="Learn how to choose car insurance in India: understand Zero Depreciation, Return to Invoice, and Engine Protect riders, plus how to save 30% online."
-        canonicalUrl="https://drivesmart-india.vercel.app/car-insurance-guide-india"
+        canonicalUrl="https://drivesmart-india.vercel.app/car-insurance-guide-india-zero-dep-explained"
         ogImage="https://drivesmart-india.vercel.app/images/car-insurance-guide-india.webp"
         type="article"
         schema={schema}

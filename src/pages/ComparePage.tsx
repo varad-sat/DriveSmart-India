@@ -4,6 +4,7 @@ import { SEOHead } from '../components/SEOHead';
 import { SmartImage } from '../components/SmartImage';
 import { CARS_DATA, Car, getCarBySlug } from '../data/cars';
 import { useApp } from '../context/AppContext';
+import { SEO_DATA } from '../data/seoKeywords';
 import {
   Scale,
   Plus,
@@ -64,15 +65,9 @@ export const ComparePage: React.FC = () => {
     }
   };
 
-  const pageTitle =
-    selectedCars.length > 0
-      ? `Compare ${selectedCars.map((c) => c.name).join(' vs ')} in India 2026 | DriveSmart`
-      : 'Compare Cars Side by Side in India 2026 | DriveSmart';
-
-  const pageDesc =
-    selectedCars.length > 0
-      ? `Side-by-side comparison of ${selectedCars.map((c) => c.name).join(', ')}. Compare ex-showroom prices, fuel efficiency, seating, pros, cons, and features.`
-      : 'Compare up to 3 cars launched in India side-by-side. Compare prices, fuel types, seating, features, pros and cons with the lowest price highlighted.';
+  const compareSeo = SEO_DATA['/compare'];
+  const pageTitle = compareSeo.title;
+  const pageDesc = compareSeo.metaDescription;
 
   const canonicalUrl = `https://drivesmart-india.vercel.app/compare-cars-in-india${
     compareList.length > 0 ? `?cars=${compareList.join(',')}` : ''
@@ -89,9 +84,10 @@ export const ComparePage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title={pageTitle}
-        description={pageDesc}
+        title={compareSeo.title}
+        description={compareSeo.metaDescription}
         canonicalUrl={canonicalUrl}
+        keywords={`${compareSeo.mainKeyword}, ${compareSeo.relatedKeywords.join(', ')}`}
         type="website"
         schema={schema}
       />
@@ -120,7 +116,7 @@ export const ComparePage: React.FC = () => {
           </ol>
         </nav>
 
-        {/* Header */}
+        {/* Header (Single H1) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-orange-50 dark:bg-orange-950/40 text-[#FF6B1A] mb-2">
@@ -128,10 +124,10 @@ export const ComparePage: React.FC = () => {
               <span>Multi-Vehicle Comparison</span>
             </span>
             <h1 className="text-3xl sm:text-4xl font-black text-[#0B1F3A] dark:text-white tracking-tight">
-              Compare Cars Side by Side
+              Compare Cars in India: Spec & Price Evaluation (2026)
             </h1>
             <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
-              Evaluate up to 3 vehicles across pricing, fuel powertrains, safety equipment, pros, and cons with the most affordable ex-showroom price automatically highlighted.
+              Use our interactive <strong>car comparison tool</strong> to <strong>compare cars in India</strong> side-by-side. Whether you need a comprehensive <strong>SUV comparison India</strong> or want to evaluate compact family hatchbacks, compare up to 3 vehicles across ex-showroom prices, fuel mileage, safety equipment, pros, and cons.
             </p>
           </div>
 
@@ -256,7 +252,7 @@ export const ComparePage: React.FC = () => {
                         <div className="w-full mt-2 rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
                           <SmartImage
                             src={car.image}
-                            alt={car.imageAlt}
+                            alt={`Compare cars in India: ${car.name} ${car.bodyType} side-by-side specifications`}
                             width={320}
                             height={180}
                             fallbackText={car.name}
@@ -477,6 +473,22 @@ export const ComparePage: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* SEO H2 & Conclusion Section */}
+        <section className="mt-12 p-6 sm:p-8 bg-slate-100 dark:bg-slate-900/60 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-4">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#0B1F3A] dark:text-white">
+            Compare Cars in India: Objective Technical Analysis
+          </h2>
+          <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200">
+            Interactive Car Comparison Tool & In-Depth SUV Comparison India
+          </h3>
+          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            Our comprehensive <strong>car comparison tool</strong> makes any family hatchback or <strong>SUV comparison India</strong> straightforward, highlighting boot spaces, cabin features, and maintenance expectations across manufacturers.
+          </p>
+          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            In conclusion, using DriveSmart to <strong>compare cars in India</strong> side-by-side guarantees that your hard-earned savings go toward the vehicle best engineered for your family&apos;s daily driving needs.
+          </p>
+        </section>
       </div>
     </>
   );

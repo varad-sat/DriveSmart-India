@@ -112,7 +112,7 @@ export const MonsoonCarePage: React.FC = () => {
       dateModified: '2026-10-12',
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': 'https://drivesmart-india.vercel.app/monsoon-car-care-tips',
+        '@id': 'https://drivesmart-india.vercel.app/monsoon-car-care-tips-rainy-season-protection',
       },
     },
     {
@@ -129,7 +129,7 @@ export const MonsoonCarePage: React.FC = () => {
           '@type': 'ListItem',
           position: 2,
           name: 'Monsoon Car Care Tips',
-          item: 'https://drivesmart-india.vercel.app/monsoon-car-care-tips',
+          item: 'https://drivesmart-india.vercel.app/monsoon-car-care-tips-rainy-season-protection',
         },
       ],
     },
@@ -151,9 +151,9 @@ export const MonsoonCarePage: React.FC = () => {
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="Monsoon Car Care Tips: 12 Ways to Protect Your Car"
+        title="Monsoon Car Care Tips: Rainy Season Guide | DriveSmart"
         description="Monsoon car care tips to protect your car in the rain: tyres, wipers, brakes, rust prevention and more. Keep your car safe this season. Read now!"
-        canonicalUrl="https://drivesmart-india.vercel.app/monsoon-car-care-tips"
+        canonicalUrl="https://drivesmart-india.vercel.app/monsoon-car-care-tips-rainy-season-protection"
         ogImage="https://drivesmart-india.vercel.app/images/monsoon-car-care-tips.webp"
         type="article"
         schema={schema}

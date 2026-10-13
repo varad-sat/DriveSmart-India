@@ -177,6 +177,11 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© 2026 DriveSmart India. All rights reserved.</p>
+          <div className="flex items-center gap-4 text-slate-400">
+            <Link to="/about" className="hover:text-white transition-colors">About DriveSmart</Link>
+            <Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link>
+            <Link to="/blog" className="hover:text-white transition-colors">Car Blog India</Link>
+          </div>
           <p className="flex items-center gap-1 text-slate-400">
             Crafted for smart car ownership across India
           </p>
