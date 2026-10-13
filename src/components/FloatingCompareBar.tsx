@@ -9,8 +9,8 @@ export const FloatingCompareBar: React.FC = () => {
   const { compareList, removeFromCompare, clearCompare } = useApp();
   const location = useLocation();
 
-  // If empty or already on the /compare page, keep the floating bar discreet or hidden
-  if (compareList.length === 0 || location.pathname === '/compare') {
+  // If empty or already on the compare page, keep the floating bar hidden
+  if (compareList.length === 0 || location.pathname.includes('/compare')) {
     return null;
   }
 
@@ -81,7 +81,7 @@ export const FloatingCompareBar: React.FC = () => {
             Clear All
           </button>
           <Link
-            to="/compare"
+            to={`/compare-cars-in-india?cars=${compareList.join(',')}`}
             className="inline-flex items-center gap-1.5 bg-[#FF6B1A] hover:bg-[#e05b12] text-white text-xs font-bold px-4 py-2 rounded-xl shadow-md transition-all whitespace-nowrap"
           >
             <span>Compare Cars Side by Side</span>

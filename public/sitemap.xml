@@ -25,6 +25,24 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://drivesmart-india.vercel.app/car-insurance-guide-india</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivesmart-india.vercel.app/manual-vs-automatic-cars-india</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://drivesmart-india.vercel.app/car-mileage-tips-india</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://drivesmart-india.vercel.app/cars</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>

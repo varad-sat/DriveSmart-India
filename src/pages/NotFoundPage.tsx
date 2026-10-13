@@ -25,7 +25,7 @@ export const NotFoundPage: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-left max-w-3xl mx-auto mb-10">
           <Link
-            to="/cars"
+            to="/new-cars-in-india-2026"
             className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#FF6B1A] transition-colors shadow-xs group"
           >
             <Car className="w-5 h-5 text-[#FF6B1A] mb-2" />
@@ -35,7 +35,7 @@ export const NotFoundPage: React.FC = () => {
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Browse Sierra, XEV 9S, e Vitara & more</p>
           </Link>
           <Link
-            to="/petrol-vs-diesel-vs-cng-vs-ev"
+            to="/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india"
             className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#FF6B1A] transition-colors shadow-xs group"
           >
             <Fuel className="w-5 h-5 text-[#FF6B1A] mb-2" />
@@ -45,7 +45,7 @@ export const NotFoundPage: React.FC = () => {
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Petrol vs Diesel vs CNG vs EV</p>
           </Link>
           <Link
-            to="/first-car-buying-guide"
+            to="/first-car-buying-guide-india-step-by-step"
             className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#FF6B1A] transition-colors shadow-xs group"
           >
             <Compass className="w-5 h-5 text-[#FF6B1A] mb-2" />
@@ -55,7 +55,7 @@ export const NotFoundPage: React.FC = () => {
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">10 Simple steps for Indian buyers</p>
           </Link>
           <Link
-            to="/monsoon-car-care-tips"
+            to="/monsoon-car-care-tips-rainy-season-protection"
             className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#FF6B1A] transition-colors shadow-xs group"
           >
             <ShieldCheck className="w-5 h-5 text-[#FF6B1A] mb-2" />
@@ -65,7 +65,7 @@ export const NotFoundPage: React.FC = () => {
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">12 Ways to protect your car</p>
           </Link>
           <Link
-            to="/tools/emi-calculator"
+            to="/tools/car-loan-emi-calculator-india"
             className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#FF6B1A] transition-colors shadow-xs group"
           >
             <Calculator className="w-5 h-5 text-[#FF6B1A] mb-2" />
@@ -75,7 +75,7 @@ export const NotFoundPage: React.FC = () => {
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Plan monthly auto loan budget</p>
           </Link>
           <Link
-            to="/compare"
+            to="/compare-cars-in-india"
             className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-[#FF6B1A] transition-colors shadow-xs group"
           >
             <Scale className="w-5 h-5 text-[#FF6B1A] mb-2" />

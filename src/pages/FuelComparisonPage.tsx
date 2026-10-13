@@ -128,7 +128,7 @@ export const FuelComparisonPage: React.FC = () => {
           '@type': 'ListItem',
           position: 2,
           name: 'Petrol vs Diesel vs CNG vs EV',
-          item: 'https://drivesmart-india.vercel.app/petrol-vs-diesel-vs-cng-vs-ev',
+          item: 'https://drivesmart-india.vercel.app/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india',
         },
       ],
     },
@@ -152,7 +152,7 @@ export const FuelComparisonPage: React.FC = () => {
       <SEOHead
         title="Petrol vs Diesel vs CNG vs EV: Which Car to Buy in 2026?"
         description="Petrol vs diesel vs CNG vs EV: compare running costs, mileage, maintenance and resale value to pick the right fuel type for you. Read the full guide."
-        canonicalUrl="https://drivesmart-india.vercel.app/petrol-vs-diesel-vs-cng-vs-ev"
+        canonicalUrl="https://drivesmart-india.vercel.app/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india"
         ogImage="https://drivesmart-india.vercel.app/images/petrol-vs-diesel-vs-cng-vs-ev.webp"
         type="article"
         schema={schema}
@@ -211,11 +211,11 @@ export const FuelComparisonPage: React.FC = () => {
         {/* Featured Image */}
         <SmartImage
           src="/images/petrol-vs-diesel-vs-cng-vs-ev.webp"
-          alt="Petrol vs diesel vs CNG vs EV cars compared at fuel and charging stations"
+          alt="Petrol vs Diesel vs CNG vs EV: Which Car to Buy in 2026? comparison infographic"
           width={1200}
           height={630}
           loading="eager"
-          caption="Comparing upfront investment against running economics across four distinct powertrain technologies."
+          caption="Powertrain comparison guide: upfront cost, fuel economy, maintenance and long-term resale across Petrol, Diesel, CNG, and EV in India (2026)."
         />
 
         {/* First 100 Words with Main Keyword */}
@@ -246,6 +246,36 @@ export const FuelComparisonPage: React.FC = () => {
             <p>
               Compressed Natural Gas (CNG) engines are modified spark-ignition engines drawing fuel from high-pressure on-board steel or composite cylinders. CNG burns significantly cleaner than liquid fuels and delivers exceptional mileage per kilogram. Finally, Battery Electric Vehicles (EVs) replace fuel tanks, pistons, and gearboxes with high-voltage traction batteries and permanent magnet synchronous motors, supplying immediate 100% torque from zero speed.
             </p>
+
+            {/* Visual Comparison Infographic Card */}
+            <figure className="my-8 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md">
+              <div className="p-4 sm:p-5 bg-gradient-to-r from-slate-900 to-[#0B1F3A] text-white flex items-center justify-between">
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#FF6B1A]">Visual Guide</span>
+                  <h3 className="text-base sm:text-lg font-bold text-white">Petrol vs Diesel vs CNG vs EV: Powertrain Comparison</h3>
+                </div>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  2026 Edition
+                </span>
+              </div>
+              <img
+                src="/images/petrol-vs-diesel-vs-cng-vs-ev.webp"
+                alt="Petrol vs Diesel vs CNG vs EV: Which Car to Buy in 2026 Comparison Graphic"
+                className="w-full h-auto object-cover max-h-[520px]"
+                loading="lazy"
+              />
+              <figcaption className="p-4 bg-slate-50 dark:bg-slate-800/80 border-t border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-600 dark:text-slate-300 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span>Side-by-side powertrain guide comparing running economy, maintenance, and vehicle suitability for Indian car buyers.</span>
+                <a
+                  href="/images/petrol-vs-diesel-vs-cng-vs-ev.webp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#FF6B1A] hover:underline font-semibold text-xs shrink-0"
+                >
+                  View full image <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </figcaption>
+            </figure>
           </section>
 
           {/* Section 2 */}
@@ -269,7 +299,7 @@ export const FuelComparisonPage: React.FC = () => {
             <p>
               Before heading to dealerships, we encourage reviewing our{' '}
               <Link
-                to="/first-car-buying-guide"
+                to="/first-car-buying-guide-india-step-by-step"
                 className="font-semibold text-[#FF6B1A] underline hover:text-[#e05b12]"
               >
                 step-by-step first car buying guide
@@ -372,7 +402,7 @@ export const FuelComparisonPage: React.FC = () => {
                 </div>
               </div>
               <Link
-                to="/tools/fuel-cost-calculator"
+                to="/tools/car-fuel-cost-calculator-india"
                 className="inline-flex items-center gap-1.5 bg-[#0B1F3A] hover:bg-[#132c4e] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors whitespace-nowrap"
               >
                 <span>Calculate Monthly Fuel Running Costs</span>
@@ -509,7 +539,7 @@ export const FuelComparisonPage: React.FC = () => {
             <p>
               Once you have chosen your preferred powertrain, make sure you protect your mechanical components against harsh weather conditions by reading our detailed{' '}
               <Link
-                to="/monsoon-car-care-tips"
+                to="/monsoon-car-care-tips-rainy-season-protection"
                 className="font-semibold text-[#FF6B1A] underline hover:text-[#e05b12]"
               >
                 essential monsoon car care tips

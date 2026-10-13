@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
 import { SmartImage } from '../components/SmartImage';
-import { CARS_DATA, Car } from '../data/cars';
+import { CARS_DATA, Car, getCarBySlug, getCarUrl } from '../data/cars';
 import { useApp } from '../context/AppContext';
 import {
   Heart,
@@ -25,10 +25,10 @@ export const CarDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { isFavourite, toggleFavourite, isInCompare, addToCompare } = useApp();
 
-  const car = CARS_DATA.find((c) => c.slug === slug);
+  const car = getCarBySlug(slug);
 
   if (!car) {
-    return <Navigate to="/cars" replace />;
+    return <Navigate to="/new-cars-in-india-2026" replace />;
   }
 
   const isFav = isFavourite(car.slug);
@@ -62,6 +62,7 @@ export const CarDetailPage: React.FC = () => {
       '@type': 'Brand',
       name: car.brand,
     },
+    url: `https://drivesmart-india.vercel.app/cars/${car.seoSlug}`,
     offers: car.priceMinLakh
       ? {
           '@type': 'AggregateOffer',
@@ -78,7 +79,7 @@ export const CarDetailPage: React.FC = () => {
       <SEOHead
         title={title}
         description={description}
-        canonicalUrl={`https://drivesmart-india.vercel.app/cars/${car.slug}`}
+        canonicalUrl={`https://drivesmart-india.vercel.app/cars/${car.seoSlug}`}
         ogImage={`https://drivesmart-india.vercel.app${car.image}`}
         type="article"
         schema={schema}
@@ -95,7 +96,7 @@ export const CarDetailPage: React.FC = () => {
             </li>
             <li className="flex items-center space-x-2">
               <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-              <Link to="/cars" className="hover:text-[#FF6B1A] transition-colors">
+              <Link to="/new-cars-in-india-2026" className="hover:text-[#FF6B1A] transition-colors">
                 2026 Cars
               </Link>
             </li>
@@ -193,7 +194,7 @@ export const CarDetailPage: React.FC = () => {
                 {/* Pre-filled EMI calculator button */}
                 {car.priceMinLakh && (
                   <Link
-                    to={`/tools/emi-calculator?price=${car.priceMinLakh}`}
+                    to={`/tools/car-loan-emi-calculator-india?price=${car.priceMinLakh}`}
                     className="w-full inline-flex items-center justify-center gap-2 bg-[#FF6B1A] hover:bg-[#e05b12] text-white text-sm font-bold py-3 px-6 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5"
                   >
                     <Calculator className="w-4 h-4" />
@@ -252,7 +253,7 @@ export const CarDetailPage: React.FC = () => {
                 <p>
                   Review our{' '}
                   <Link
-                    to="/petrol-vs-diesel-vs-cng-vs-ev"
+                    to="/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india"
                     className="font-semibold text-[#FF6B1A] underline hover:text-[#e05b12]"
                   >
                     petrol vs diesel vs CNG vs EV comparison
@@ -332,13 +333,13 @@ export const CarDetailPage: React.FC = () => {
                 Before booking, make sure to read our 10-step handbook to protect yourself against dealer accessory markups and obtain genuine insurance quotes:
               </p>
               <Link
-                to="/first-car-buying-guide"
+                to="/first-car-buying-guide-india-step-by-step"
                 className="block p-3 rounded-xl bg-orange-50 dark:bg-orange-950/40 border border-orange-200 dark:border-orange-800 text-xs font-bold text-[#FF6B1A] hover:underline"
               >
                 Read our complete first car buying guide
               </Link>
               <Link
-                to="/tools/fuel-cost-calculator"
+                to="/tools/car-fuel-cost-calculator-india"
                 className="block p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:text-[#FF6B1A]"
               >
                 Calculate monthly fuel running costs
@@ -387,7 +388,7 @@ export const CarDetailPage: React.FC = () => {
                         {rel.brand} • {rel.bodyType}
                       </span>
                       <h3 className="text-base font-bold text-slate-900 dark:text-white mt-0.5">
-                        <Link to={`/cars/${rel.slug}`} className="hover:text-[#FF6B1A]">
+                        <Link to={`/cars/${rel.seoSlug}`} className="hover:text-[#FF6B1A]">
                           {rel.name}
                         </Link>
                       </h3>
@@ -397,7 +398,7 @@ export const CarDetailPage: React.FC = () => {
                     </div>
                     <div className="pt-4 border-t border-slate-100 dark:border-slate-800 mt-4">
                       <Link
-                        to={`/cars/${rel.slug}`}
+                        to={`/cars/${rel.seoSlug}`}
                         className="text-xs font-bold text-[#FF6B1A] hover:underline inline-flex items-center gap-1"
                       >
                         <span>View {rel.name} price and features</span>

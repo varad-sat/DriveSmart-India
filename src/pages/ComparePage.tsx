@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
 import { SmartImage } from '../components/SmartImage';
-import { CARS_DATA, Car } from '../data/cars';
+import { CARS_DATA, Car, getCarBySlug } from '../data/cars';
 import { useApp } from '../context/AppContext';
 import {
   Scale,
@@ -20,7 +20,33 @@ import {
 
 export const ComparePage: React.FC = () => {
   const { compareList, addToCompare, removeFromCompare, clearCompare } = useApp();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedSlotCar, setSelectedSlotCar] = useState<string>('');
+
+  // Sync URL ?cars=slug1,slug2 with compareList on mount
+  useEffect(() => {
+    const carsFromQuery = searchParams.get('cars');
+    if (carsFromQuery) {
+      const slugs = carsFromQuery.split(',').map((s) => s.trim()).filter(Boolean);
+      slugs.forEach((slug) => {
+        const found = getCarBySlug(slug);
+        if (found && !compareList.includes(found.slug)) {
+          addToCompare(found.slug);
+        }
+      });
+    }
+  }, []);
+
+  // Sync compareList changes back into URL
+  useEffect(() => {
+    if (compareList.length > 0) {
+      setSearchParams({ cars: compareList.join(',') }, { replace: true });
+    } else if (searchParams.has('cars')) {
+      const next = new URLSearchParams(searchParams);
+      next.delete('cars');
+      setSearchParams(next, { replace: true });
+    }
+  }, [compareList]);
 
   const selectedCars = CARS_DATA.filter((car) => compareList.includes(car.slug));
 
@@ -38,21 +64,34 @@ export const ComparePage: React.FC = () => {
     }
   };
 
+  const pageTitle =
+    selectedCars.length > 0
+      ? `Compare ${selectedCars.map((c) => c.name).join(' vs ')} in India 2026 | DriveSmart`
+      : 'Compare Cars Side by Side in India 2026 | DriveSmart';
+
+  const pageDesc =
+    selectedCars.length > 0
+      ? `Side-by-side comparison of ${selectedCars.map((c) => c.name).join(', ')}. Compare ex-showroom prices, fuel efficiency, seating, pros, cons, and features.`
+      : 'Compare up to 3 cars launched in India side-by-side. Compare prices, fuel types, seating, features, pros and cons with the lowest price highlighted.';
+
+  const canonicalUrl = `https://drivesmart-india.vercel.app/compare-cars-in-india${
+    compareList.length > 0 ? `?cars=${compareList.join(',')}` : ''
+  }`;
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Compare Cars Side by Side in India 2026 | DriveSmart',
-    description:
-      'Compare up to 3 cars launched in India side-by-side. Compare prices, fuel types, seating, features, pros and cons with the lowest price highlighted.',
-    url: 'https://drivesmart-india.vercel.app/compare',
+    name: pageTitle,
+    description: pageDesc,
+    url: canonicalUrl,
   };
 
   return (
     <>
       <SEOHead
-        title="Compare Cars Side by Side in India 2026 | DriveSmart"
-        description="Compare up to 3 cars launched in India side-by-side. Compare prices, fuel types, seating, features, pros and cons with the lowest price highlighted."
-        canonicalUrl="https://drivesmart-india.vercel.app/compare"
+        title={pageTitle}
+        description={pageDesc}
+        canonicalUrl={canonicalUrl}
         type="website"
         schema={schema}
       />
@@ -68,7 +107,7 @@ export const ComparePage: React.FC = () => {
             </li>
             <li className="flex items-center space-x-2">
               <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-              <Link to="/cars" className="hover:text-[#FF6B1A] transition-colors">
+              <Link to="/new-cars-in-india-2026" className="hover:text-[#FF6B1A] transition-colors">
                 2026 Cars
               </Link>
             </li>
@@ -173,7 +212,7 @@ export const ComparePage: React.FC = () => {
 
             <div>
               <Link
-                to="/cars"
+                to="/new-cars-in-india-2026"
                 className="inline-flex items-center gap-2 bg-[#FF6B1A] hover:bg-[#e05b12] text-white text-xs font-bold px-5 py-3 rounded-xl shadow-md transition-all"
               >
                 <span>Browse All 2026 Launches</span>
@@ -210,7 +249,7 @@ export const ComparePage: React.FC = () => {
                           </button>
                         </div>
                         <h3 className="text-lg font-black text-slate-900 dark:text-white leading-tight">
-                          <Link to={`/cars/${car.slug}`} className="hover:text-[#FF6B1A]">
+                          <Link to={`/cars/${car.seoSlug}`} className="hover:text-[#FF6B1A]">
                             {car.name}
                           </Link>
                         </h3>
@@ -409,7 +448,7 @@ export const ComparePage: React.FC = () => {
                       <td key={car.slug} className="p-4 sm:p-5 space-y-2">
                         {car.priceMinLakh && (
                           <Link
-                            to={`/tools/emi-calculator?price=${car.priceMinLakh}`}
+                            to={`/tools/car-loan-emi-calculator-india?price=${car.priceMinLakh}`}
                             className="w-full inline-flex items-center justify-center gap-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-semibold py-2 px-3 rounded-lg transition-colors"
                           >
                             <Calculator className="w-3.5 h-3.5 text-[#FF6B1A]" />
@@ -417,7 +456,7 @@ export const ComparePage: React.FC = () => {
                           </Link>
                         )}
                         <Link
-                          to={`/cars/${car.slug}`}
+                          to={`/cars/${car.seoSlug}`}
                           className="w-full inline-flex items-center justify-center gap-1.5 bg-[#FF6B1A] hover:bg-[#e05b12] text-white text-xs font-bold py-2.5 px-3 rounded-xl shadow-xs transition-colors"
                         >
                           <span>View {car.name} price and features</span>

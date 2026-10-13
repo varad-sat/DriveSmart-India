@@ -17,6 +17,9 @@ import { CarDetailPage } from './pages/CarDetailPage';
 import { ComparePage } from './pages/ComparePage';
 import { EmiCalculatorPage } from './pages/EmiCalculatorPage';
 import { FuelCostCalculatorPage } from './pages/FuelCostCalculatorPage';
+import { InsuranceGuidePage } from './pages/InsuranceGuidePage';
+import { TransmissionGuidePage } from './pages/TransmissionGuidePage';
+import { MileageTipsPage } from './pages/MileageTipsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 export default function App() {
@@ -29,30 +32,96 @@ export default function App() {
             <Navbar />
             <div className="flex-1">
               <Routes>
+                {/* Home */}
                 <Route path="/" element={<HomePage />} />
+
+                {/* Guides & Comparisons - Keyword Rich URLs & Aliases */}
+                <Route
+                  path="/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india"
+                  element={<FuelComparisonPage />}
+                />
                 <Route
                   path="/petrol-vs-diesel-vs-cng-vs-ev"
                   element={<FuelComparisonPage />}
+                />
+
+                <Route
+                  path="/first-car-buying-guide-india-step-by-step"
+                  element={<FirstCarGuidePage />}
                 />
                 <Route
                   path="/first-car-buying-guide"
                   element={<FirstCarGuidePage />}
                 />
+
+                <Route
+                  path="/monsoon-car-care-tips-rainy-season-protection"
+                  element={<MonsoonCarePage />}
+                />
                 <Route
                   path="/monsoon-car-care-tips"
                   element={<MonsoonCarePage />}
                 />
+
+                <Route
+                  path="/car-insurance-guide-india-zero-dep-explained"
+                  element={<InsuranceGuidePage />}
+                />
+                <Route
+                  path="/car-insurance-guide-india"
+                  element={<InsuranceGuidePage />}
+                />
+
+                <Route
+                  path="/manual-vs-automatic-cars-india-amt-cvt-dct"
+                  element={<TransmissionGuidePage />}
+                />
+                <Route
+                  path="/manual-vs-automatic-cars-india"
+                  element={<TransmissionGuidePage />}
+                />
+
+                <Route
+                  path="/car-mileage-tips-india-boost-fuel-economy"
+                  element={<MileageTipsPage />}
+                />
+                <Route
+                  path="/car-mileage-tips-india"
+                  element={<MileageTipsPage />}
+                />
+
+                {/* Cars Catalog - Keyword Rich URLs & Filter Shortcuts */}
+                <Route path="/new-cars-in-india-2026" element={<CarsListingPage />} />
                 <Route path="/cars" element={<CarsListingPage />} />
+                <Route path="/electric-cars-in-india" element={<CarsListingPage defaultFuel="Electric" />} />
+                <Route path="/suv-cars-in-india" element={<CarsListingPage defaultBody="SUV" />} />
+
+                {/* Car Detail Pages - Individual Keyword Slugs & Standard Slugs */}
                 <Route path="/cars/:slug" element={<CarDetailPage />} />
+
+                {/* Comparison Tool - Keyword Rich URLs & Aliases */}
+                <Route path="/compare-cars-in-india" element={<ComparePage />} />
                 <Route path="/compare" element={<ComparePage />} />
+
+                {/* Financial & Running Cost Calculators */}
+                <Route
+                  path="/tools/car-loan-emi-calculator-india"
+                  element={<EmiCalculatorPage />}
+                />
                 <Route
                   path="/tools/emi-calculator"
                   element={<EmiCalculatorPage />}
                 />
                 <Route
+                  path="/tools/car-fuel-cost-calculator-india"
+                  element={<FuelCostCalculatorPage />}
+                />
+                <Route
                   path="/tools/fuel-cost-calculator"
                   element={<FuelCostCalculatorPage />}
                 />
+
+                {/* 404 Fallback */}
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </div>

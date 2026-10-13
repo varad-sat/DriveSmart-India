@@ -139,7 +139,7 @@ export const FuelCostCalculatorPage: React.FC = () => {
     operatingSystem: 'All',
     description:
       'Compare monthly and yearly driving costs for Petrol, Diesel, CNG, and Electric cars based on your monthly distance. Highlight the cheapest fuel with DriveSmart.',
-    url: 'https://drivesmart-india.vercel.app/tools/fuel-cost-calculator',
+    url: 'https://drivesmart-india.vercel.app/tools/car-fuel-cost-calculator-india',
   };
 
   return (
@@ -147,7 +147,7 @@ export const FuelCostCalculatorPage: React.FC = () => {
       <SEOHead
         title="Fuel Running Cost Calculator India: Petrol vs EV vs CNG"
         description="Compare monthly and yearly driving costs for Petrol, Diesel, CNG, and Electric cars based on your monthly distance. Highlight the cheapest fuel with DriveSmart."
-        canonicalUrl="https://drivesmart-india.vercel.app/tools/fuel-cost-calculator"
+        canonicalUrl="https://drivesmart-india.vercel.app/tools/car-fuel-cost-calculator-india"
         type="website"
         schema={schema}
       />
@@ -163,7 +163,7 @@ export const FuelCostCalculatorPage: React.FC = () => {
             </li>
             <li className="flex items-center space-x-2">
               <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-              <Link to="/petrol-vs-diesel-vs-cng-vs-ev" className="hover:text-[#FF6B1A] transition-colors">
+              <Link to="/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india" className="hover:text-[#FF6B1A] transition-colors">
                 Fuel Guides
               </Link>
             </li>
@@ -468,7 +468,7 @@ export const FuelCostCalculatorPage: React.FC = () => {
             {/* Quick Link to Fuel Comparison Article */}
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
               <Link
-                to="/petrol-vs-diesel-vs-cng-vs-ev"
+                to="/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india"
                 className="w-full inline-flex items-center justify-center gap-2 bg-[#0B1F3A] hover:bg-[#132c4e] text-white text-xs font-bold py-3 px-4 rounded-xl transition-colors"
               >
                 <span>Read our petrol vs diesel vs CNG vs EV comparison</span>

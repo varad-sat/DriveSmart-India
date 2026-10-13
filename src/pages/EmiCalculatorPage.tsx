@@ -90,7 +90,7 @@ export const EmiCalculatorPage: React.FC = () => {
     operatingSystem: 'All',
     description:
       'Calculate your car loan monthly EMI, total interest and down payment with our interactive sliders and donut chart. Plan your car finance with DriveSmart.',
-    url: 'https://drivesmart-india.vercel.app/tools/emi-calculator',
+    url: 'https://drivesmart-india.vercel.app/tools/car-loan-emi-calculator-india',
   };
 
   return (
@@ -98,7 +98,7 @@ export const EmiCalculatorPage: React.FC = () => {
       <SEOHead
         title="Car Loan EMI Calculator India: Monthly Cost & Interest"
         description="Calculate your car loan monthly EMI, total interest and down payment with our interactive sliders and donut chart. Plan your car finance with DriveSmart."
-        canonicalUrl="https://drivesmart-india.vercel.app/tools/emi-calculator"
+        canonicalUrl="https://drivesmart-india.vercel.app/tools/car-loan-emi-calculator-india"
         type="website"
         schema={schema}
       />
@@ -114,7 +114,7 @@ export const EmiCalculatorPage: React.FC = () => {
             </li>
             <li className="flex items-center space-x-2">
               <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-              <Link to="/cars" className="hover:text-[#FF6B1A] transition-colors">
+              <Link to="/new-cars-in-india-2026" className="hover:text-[#FF6B1A] transition-colors">
                 2026 Cars
               </Link>
             </li>

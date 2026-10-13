@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
-                  to="/petrol-vs-diesel-vs-cng-vs-ev"
+                  to="/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india"
                   className="flex items-center gap-2 text-slate-300 hover:text-[#FF6B1A] transition-colors"
                 >
                   <Fuel className="w-4 h-4 text-[#FF6B1A] shrink-0" />
@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="/first-car-buying-guide"
+                  to="/first-car-buying-guide-india-step-by-step"
                   className="flex items-center gap-2 text-slate-300 hover:text-[#FF6B1A] transition-colors"
                 >
                   <Compass className="w-4 h-4 text-[#FF6B1A] shrink-0" />
@@ -51,11 +51,38 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="/monsoon-car-care-tips"
+                  to="/monsoon-car-care-tips-rainy-season-protection"
                   className="flex items-center gap-2 text-slate-300 hover:text-[#FF6B1A] transition-colors"
                 >
                   <ShieldCheck className="w-4 h-4 text-[#FF6B1A] shrink-0" />
                   <span>Monsoon Car Care Tips & Rain Protection</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/car-insurance-guide-india-zero-dep-explained"
+                  className="flex items-center gap-2 text-slate-300 hover:text-[#FF6B1A] transition-colors"
+                >
+                  <ShieldCheck className="w-4 h-4 text-[#FF6B1A] shrink-0" />
+                  <span>Car Insurance Guide India (Zero Dep & RTI)</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/manual-vs-automatic-cars-india-amt-cvt-dct"
+                  className="flex items-center gap-2 text-slate-300 hover:text-[#FF6B1A] transition-colors"
+                >
+                  <Compass className="w-4 h-4 text-[#FF6B1A] shrink-0" />
+                  <span>Manual vs Automatic Cars in India (AMT, CVT, DCT)</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/car-mileage-tips-india-boost-fuel-economy"
+                  className="flex items-center gap-2 text-slate-300 hover:text-[#FF6B1A] transition-colors"
+                >
+                  <Fuel className="w-4 h-4 text-[#FF6B1A] shrink-0" />
+                  <span>Car Mileage Tips India (Boost Fuel Economy)</span>
                 </Link>
               </li>
               <li>
@@ -77,7 +104,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
-                  to="/cars"
+                  to="/new-cars-in-india-2026"
                   className="flex items-center gap-2 text-slate-300 hover:text-[#FF6B1A] transition-colors"
                 >
                   <Car className="w-4 h-4 text-[#FF6B1A] shrink-0" />
@@ -86,7 +113,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="/compare"
+                  to="/compare-cars-in-india"
                   className="flex items-center gap-2 text-slate-300 hover:text-[#FF6B1A] transition-colors"
                 >
                   <Scale className="w-4 h-4 text-[#FF6B1A] shrink-0" />
@@ -95,7 +122,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="/tools/emi-calculator"
+                  to="/tools/car-loan-emi-calculator-india"
                   className="flex items-center gap-2 text-slate-300 hover:text-[#FF6B1A] transition-colors"
                 >
                   <Calculator className="w-4 h-4 text-[#FF6B1A] shrink-0" />
@@ -104,7 +131,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="/tools/fuel-cost-calculator"
+                  to="/tools/car-fuel-cost-calculator-india"
                   className="flex items-center gap-2 text-slate-300 hover:text-[#FF6B1A] transition-colors"
                 >
                   <Fuel className="w-4 h-4 text-[#FF6B1A] shrink-0" />

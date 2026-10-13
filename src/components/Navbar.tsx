@@ -67,10 +67,10 @@ export const Navbar: React.FC = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { to: '/cars', label: '2026 Cars', icon: Car },
-    { to: '/petrol-vs-diesel-vs-cng-vs-ev', label: 'Fuel Types', icon: Fuel },
-    { to: '/first-car-buying-guide', label: 'Buying Guide', icon: Compass },
-    { to: '/monsoon-car-care-tips', label: 'Monsoon Care', icon: ShieldCheck },
+    { to: '/new-cars-in-india-2026', label: '2026 Cars', icon: Car },
+    { to: '/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india', label: 'Fuel Types', icon: Fuel },
+    { to: '/first-car-buying-guide-india-step-by-step', label: 'Buying Guide', icon: Compass },
+    { to: '/monsoon-car-care-tips-rainy-season-protection', label: 'Monsoon Care', icon: ShieldCheck },
   ];
 
   return (
@@ -168,7 +168,7 @@ export const Navbar: React.FC = () => {
                           {searchResults.cars.map((car) => (
                             <Link
                               key={car.slug}
-                              to={`/cars/${car.slug}`}
+                              to={`/cars/${car.seoSlug}`}
                               className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
                             >
                               <div>
@@ -235,7 +235,7 @@ export const Navbar: React.FC = () => {
               {toolsDropdown && (
                 <div className="absolute right-0 top-full mt-2 w-56 bg-white dark:bg-slate-900 rounded-xl shadow-xl border border-slate-200 dark:border-slate-800 p-2 z-50 text-slate-900 dark:text-white">
                   <Link
-                    to="/tools/emi-calculator"
+                    to="/tools/car-loan-emi-calculator-india"
                     onClick={() => setToolsDropdown(false)}
                     className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-medium"
                   >
@@ -243,7 +243,7 @@ export const Navbar: React.FC = () => {
                     <span>Car Loan EMI Calculator</span>
                   </Link>
                   <Link
-                    to="/tools/fuel-cost-calculator"
+                    to="/tools/car-fuel-cost-calculator-india"
                     onClick={() => setToolsDropdown(false)}
                     className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-medium"
                   >
@@ -251,7 +251,7 @@ export const Navbar: React.FC = () => {
                     <span>Fuel Cost Calculator</span>
                   </Link>
                   <Link
-                    to="/compare"
+                    to="/compare-cars-in-india"
                     onClick={() => setToolsDropdown(false)}
                     className="flex items-center gap-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-medium"
                   >
@@ -267,7 +267,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-2">
             {/* Compare shortcut */}
             <Link
-              to="/compare"
+              to="/compare-cars-in-india"
               className="relative p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
               title="Compare Cars"
               aria-label="View Car Comparison"
@@ -355,7 +355,7 @@ export const Navbar: React.FC = () => {
               {searchResults.cars.map((car) => (
                 <Link
                   key={car.slug}
-                  to={`/cars/${car.slug}`}
+                  to={`/cars/${car.seoSlug}`}
                   onClick={() => setIsOpen(false)}
                   className="block p-2 rounded-lg hover:bg-slate-800 text-xs"
                 >
@@ -374,7 +374,7 @@ export const Navbar: React.FC = () => {
               Home Overview
             </Link>
             <Link
-              to="/cars"
+              to="/new-cars-in-india-2026"
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5"
             >
@@ -382,7 +382,7 @@ export const Navbar: React.FC = () => {
               <span>Latest 2026 Cars (10 Models)</span>
             </Link>
             <Link
-              to="/compare"
+              to="/compare-cars-in-india"
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5"
             >
@@ -390,7 +390,7 @@ export const Navbar: React.FC = () => {
               <span>Compare Vehicles ({compareList.length})</span>
             </Link>
             <Link
-              to="/tools/emi-calculator"
+              to="/tools/car-loan-emi-calculator-india"
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5"
             >
@@ -398,7 +398,7 @@ export const Navbar: React.FC = () => {
               <span>Car Loan EMI Calculator</span>
             </Link>
             <Link
-              to="/tools/fuel-cost-calculator"
+              to="/tools/car-fuel-cost-calculator-india"
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5"
             >

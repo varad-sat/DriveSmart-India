@@ -61,7 +61,7 @@ export const GarageDrawer: React.FC = () => {
                   Save your shortlisted cars here by clicking the heart icon on any car card or detail page.
                 </p>
                 <Link
-                  to="/cars"
+                  to="/new-cars-in-india-2026"
                   onClick={() => setIsGarageOpen(false)}
                   className="inline-flex items-center gap-2 bg-[#FF6B1A] hover:bg-[#e05b12] text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-colors"
                 >
@@ -114,16 +114,16 @@ export const GarageDrawer: React.FC = () => {
 
                     <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-700/60 text-xs gap-2">
                       <Link
-                        to={`/cars/${car.slug}`}
+                        to={`/cars/${car.seoSlug}`}
                         onClick={() => setIsGarageOpen(false)}
                         className="text-[#FF6B1A] hover:underline font-bold inline-flex items-center gap-1"
                       >
                         <span>View {car.name} price and features</span>
-                        <ArrowRight className="w-3 h-3" />
+                        <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                       {car.priceMinLakh && (
                         <Link
-                          to={`/tools/emi-calculator?price=${car.priceMinLakh}`}
+                          to={`/tools/car-loan-emi-calculator-india?price=${car.priceMinLakh}`}
                           onClick={() => setIsGarageOpen(false)}
                           className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white inline-flex items-center gap-1 font-medium"
                           title="Calculate loan EMI for this car"
@@ -143,14 +143,14 @@ export const GarageDrawer: React.FC = () => {
           {savedCars.length > 0 && (
             <div className="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex items-center justify-between gap-3">
               <Link
-                to="/compare"
+                to="/compare-cars-in-india"
                 onClick={() => setIsGarageOpen(false)}
                 className="flex-1 bg-[#0B1F3A] hover:bg-[#132c4e] text-white text-center text-xs font-bold py-2.5 px-3 rounded-lg transition-colors"
               >
                 Compare Cars Now
               </Link>
               <Link
-                to="/tools/emi-calculator"
+                to="/tools/car-loan-emi-calculator-india"
                 onClick={() => setIsGarageOpen(false)}
                 className="flex-1 bg-[#FF6B1A] hover:bg-[#e05b12] text-white text-center text-xs font-bold py-2.5 px-3 rounded-lg transition-colors"
               >

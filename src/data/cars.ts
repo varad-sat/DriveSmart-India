@@ -1,5 +1,6 @@
 export interface Car {
   slug: string;
+  seoSlug: string;
   name: string;
   brand: string;
   bodyType: 'SUV' | 'Compact SUV' | 'Mid-size SUV' | 'Coupe SUV' | 'EV SUV' | 'Hatchback' | 'Sedan';
@@ -17,9 +18,26 @@ export interface Car {
   imageAlt: string;
 }
 
+export function getCarBySlug(slug: string | undefined): Car | undefined {
+  if (!slug) return undefined;
+  const clean = slug.toLowerCase();
+  return CARS_DATA.find(
+    (c) =>
+      c.seoSlug.toLowerCase() === clean ||
+      c.slug.toLowerCase() === clean ||
+      c.seoSlug.toLowerCase().startsWith(clean) ||
+      clean.startsWith(c.slug.toLowerCase())
+  );
+}
+
+export function getCarUrl(car: Car): string {
+  return `/cars/${car.seoSlug}`;
+}
+
 export const CARS_DATA: Car[] = [
   {
     slug: 'tata-sierra',
+    seoSlug: 'tata-sierra-suv-price-specs-features',
     name: 'Tata Sierra',
     brand: 'Tata',
     bodyType: 'SUV',
@@ -51,6 +69,7 @@ export const CARS_DATA: Car[] = [
   },
   {
     slug: 'mahindra-xev-9s',
+    seoSlug: 'mahindra-xev-9s-electric-suv-price-specs',
     name: 'Mahindra XEV 9S',
     brand: 'Mahindra',
     bodyType: 'EV SUV',
@@ -82,6 +101,7 @@ export const CARS_DATA: Car[] = [
   },
   {
     slug: 'hyundai-venue-new',
+    seoSlug: 'hyundai-venue-compact-suv-price-specs',
     name: 'Hyundai Venue New',
     brand: 'Hyundai',
     bodyType: 'Compact SUV',
@@ -113,6 +133,7 @@ export const CARS_DATA: Car[] = [
   },
   {
     slug: 'kia-seltos-new-gen',
+    seoSlug: 'kia-seltos-mid-size-suv-price-specs',
     name: 'Kia Seltos New-Gen',
     brand: 'Kia',
     bodyType: 'Mid-size SUV',
@@ -144,6 +165,7 @@ export const CARS_DATA: Car[] = [
   },
   {
     slug: 'renault-duster-new-gen',
+    seoSlug: 'renault-duster-suv-price-specs-features',
     name: 'Renault Duster New-Gen',
     brand: 'Renault',
     bodyType: 'Mid-size SUV',
@@ -175,6 +197,7 @@ export const CARS_DATA: Car[] = [
   },
   {
     slug: 'maruti-suzuki-e-vitara',
+    seoSlug: 'maruti-suzuki-e-vitara-electric-suv-price-specs',
     name: 'Maruti Suzuki e Vitara',
     brand: 'Maruti Suzuki',
     bodyType: 'EV SUV',
@@ -206,6 +229,7 @@ export const CARS_DATA: Car[] = [
   },
   {
     slug: 'mahindra-xuv-7xo',
+    seoSlug: 'mahindra-xuv-7xo-7-seater-suv-price-specs',
     name: 'Mahindra XUV 7XO',
     brand: 'Mahindra',
     bodyType: 'SUV',
@@ -237,6 +261,7 @@ export const CARS_DATA: Car[] = [
   },
   {
     slug: 'skoda-kushaq-facelift',
+    seoSlug: 'skoda-kushaq-facelift-suv-price-specs',
     name: 'Skoda Kushaq Facelift',
     brand: 'Skoda',
     bodyType: 'Mid-size SUV',
@@ -268,6 +293,7 @@ export const CARS_DATA: Car[] = [
   },
   {
     slug: 'nissan-gravite',
+    seoSlug: 'nissan-gravite-compact-crossover-price-specs',
     name: 'Nissan Gravite',
     brand: 'Nissan',
     bodyType: 'Compact SUV',
@@ -299,6 +325,7 @@ export const CARS_DATA: Car[] = [
   },
   {
     slug: 'maruti-suzuki-victoris',
+    seoSlug: 'maruti-suzuki-victoris-coupe-suv-price-specs',
     name: 'Maruti Suzuki Victoris',
     brand: 'Maruti Suzuki',
     bodyType: 'Coupe SUV',

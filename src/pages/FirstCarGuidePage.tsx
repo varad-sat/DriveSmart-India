@@ -141,7 +141,7 @@ export const FirstCarGuidePage: React.FC = () => {
           '@type': 'ListItem',
           position: 2,
           name: 'First Car Buying Guide',
-          item: 'https://drivesmart-india.vercel.app/first-car-buying-guide',
+          item: 'https://drivesmart-india.vercel.app/first-car-buying-guide-india-step-by-step',
         },
       ],
     },
@@ -165,7 +165,7 @@ export const FirstCarGuidePage: React.FC = () => {
       <SEOHead
         title="First Car Buying Guide: 10 Steps for Indian Buyers"
         description="Our first car buying guide covers budgeting, car loans, test drives and insurance in 10 easy steps. Buy your first car with confidence. Read now."
-        canonicalUrl="https://drivesmart-india.vercel.app/first-car-buying-guide"
+        canonicalUrl="https://drivesmart-india.vercel.app/first-car-buying-guide-india-step-by-step"
         ogImage="https://drivesmart-india.vercel.app/images/first-car-buying-guide.webp"
         type="article"
         schema={schema}
@@ -224,11 +224,11 @@ export const FirstCarGuidePage: React.FC = () => {
         {/* Featured Image */}
         <SmartImage
           src="/images/first-car-buying-guide.webp"
-          alt="First car buying guide: young buyer receiving keys of a new car"
+          alt="Modern car showroom with brand new vehicle on display for first time buyers"
           width={1200}
           height={630}
           loading="eager"
-          caption="Unlocking the keys to your first set of wheels with financial clarity and showroom confidence."
+          caption="Navigating modern car dealerships with financial clarity, smart test drives, and showroom confidence."
         />
 
         {/* First 100 Words with Main Keyword */}
@@ -304,7 +304,7 @@ export const FirstCarGuidePage: React.FC = () => {
             <p>
               For a detailed breakdown of fuel economics, battery warranties, and real-world running figures, study our dedicated{' '}
               <Link
-                to="/petrol-vs-diesel-vs-cng-vs-ev"
+                to="/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india"
                 className="font-bold text-[#FF6B1A] underline hover:text-[#e05b12]"
               >
                 petrol vs diesel vs CNG vs EV comparison
@@ -358,7 +358,7 @@ export const FirstCarGuidePage: React.FC = () => {
                 </div>
               </div>
               <Link
-                to="/tools/emi-calculator"
+                to="/tools/car-loan-emi-calculator-india"
                 className="inline-flex items-center gap-1.5 bg-[#0B1F3A] hover:bg-[#132c4e] text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-colors whitespace-nowrap"
               >
                 <span>Calculate Your Car Loan EMI</span>
@@ -537,7 +537,7 @@ export const FirstCarGuidePage: React.FC = () => {
             <p className="text-sm text-slate-700 leading-relaxed">
               In conclusion, following this comprehensive <strong>first car buying guide</strong> equips you with the financial clarity and analytical discipline required to navigate Indian automotive dealerships smoothly. After bringing your new ride home, protect your valuable asset from wet-weather hazards by reading our guide to{' '}
               <Link
-                to="/monsoon-car-care-tips"
+                to="/monsoon-car-care-tips-rainy-season-protection"
                 className="font-bold text-[#FF6B1A] underline hover:text-[#e05b12]"
               >
                 essential monsoon car care tips

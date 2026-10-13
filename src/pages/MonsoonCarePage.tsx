@@ -212,11 +212,11 @@ export const MonsoonCarePage: React.FC = () => {
         {/* Featured Image */}
         <SmartImage
           src="/images/monsoon-car-care-tips.webp"
-          alt="Monsoon car care tips: car driving safely on a wet road in heavy rain"
+          alt="Car windshield wipers clearing heavy rain on wet asphalt road during monsoon downpours"
           width={1200}
           height={630}
           loading="eager"
-          caption="Practical seasonal safeguards to preserve mechanical reliability and driving safety during downpours."
+          caption="Practical seasonal safeguards to protect wiper blades, underbody coating, and mechanical components during downpours."
         />
 
         {/* First 100 Words with Main Keyword */}
@@ -433,7 +433,7 @@ export const MonsoonCarePage: React.FC = () => {
             <p>
               If you are currently researching new vehicles or reviewing insurance add-ons for your upcoming purchase, refer back to our{' '}
               <Link
-                to="/first-car-buying-guide"
+                to="/first-car-buying-guide-india-step-by-step"
                 className="font-bold text-[#FF6B1A] underline hover:text-[#e05b12]"
               >
                 complete first car buying guide
@@ -514,7 +514,7 @@ export const MonsoonCarePage: React.FC = () => {
             <p className="text-sm text-slate-700 leading-relaxed mb-3">
               Did you know that electric vehicles are exceptionally well-sealed against standing water? Modern EV battery packs and motors carry stringent IP67 and IP68 waterproof ratings, completely eliminating the danger of hydrostatic engine lock that threatens petrol and diesel cars. To learn more about modern powertrain distinctions, explore our comprehensive{' '}
               <Link
-                to="/petrol-vs-diesel-vs-cng-vs-ev"
+                to="/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india"
                 className="font-bold text-[#FF6B1A] underline hover:text-[#e05b12]"
               >
                 petrol vs diesel vs CNG vs EV comparison

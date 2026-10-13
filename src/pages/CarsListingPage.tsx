@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
 import { SmartImage } from '../components/SmartImage';
 import { CARS_DATA, Car } from '../data/cars';
@@ -18,16 +18,74 @@ import {
   Check,
 } from 'lucide-react';
 
-export const CarsListingPage: React.FC = () => {
+interface CarsListingPageProps {
+  defaultFuel?: string;
+  defaultBody?: string;
+}
+
+export const CarsListingPage: React.FC<CarsListingPageProps> = ({ defaultFuel, defaultBody }) => {
   const { isFavourite, toggleFavourite, isInCompare, addToCompare } = useApp();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Read params from URL or defaults
+  const paramFuel = searchParams.get('fuel') || defaultFuel || 'All';
+  const paramBrand = searchParams.get('brand') || 'All';
+  const paramBody = searchParams.get('body') || defaultBody || 'All';
+  const paramBudget = searchParams.get('budget') ? Number(searchParams.get('budget')) : 35;
+  const paramSearch = searchParams.get('q') || '';
+  const paramSort = (searchParams.get('sort') as 'newest' | 'price-asc' | 'price-desc') || 'newest';
 
   // Filters state
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedBrand, setSelectedBrand] = useState('All');
-  const [selectedBodyType, setSelectedBodyType] = useState('All');
-  const [selectedFuel, setSelectedFuel] = useState('All');
-  const [maxBudget, setMaxBudget] = useState(35); // ₹5 to ₹35 Lakh
-  const [sortBy, setSortBy] = useState<'newest' | 'price-asc' | 'price-desc'>('newest');
+  const [searchTerm, setSearchTerm] = useState(paramSearch);
+  const [selectedBrand, setSelectedBrand] = useState(paramBrand);
+  const [selectedBodyType, setSelectedBodyType] = useState(paramBody);
+  const [selectedFuel, setSelectedFuel] = useState(paramFuel);
+  const [maxBudget, setMaxBudget] = useState(paramBudget);
+  const [sortBy, setSortBy] = useState<'newest' | 'price-asc' | 'price-desc'>(paramSort);
+
+  // Sync state if URL searchParams change
+  useEffect(() => {
+    setSelectedFuel(searchParams.get('fuel') || defaultFuel || 'All');
+    setSelectedBrand(searchParams.get('brand') || 'All');
+    setSelectedBodyType(searchParams.get('body') || defaultBody || 'All');
+    setMaxBudget(searchParams.get('budget') ? Number(searchParams.get('budget')) : 35);
+    setSearchTerm(searchParams.get('q') || '');
+    setSortBy((searchParams.get('sort') as any) || 'newest');
+  }, [searchParams, defaultFuel, defaultBody]);
+
+  // Update URL parameters helper
+  const updateFiltersInUrl = (newFilters: {
+    fuel?: string;
+    brand?: string;
+    body?: string;
+    budget?: number;
+    q?: string;
+    sort?: string;
+  }) => {
+    const nextFuel = newFilters.fuel !== undefined ? newFilters.fuel : selectedFuel;
+    const nextBrand = newFilters.brand !== undefined ? newFilters.brand : selectedBrand;
+    const nextBody = newFilters.body !== undefined ? newFilters.body : selectedBodyType;
+    const nextBudget = newFilters.budget !== undefined ? newFilters.budget : maxBudget;
+    const nextQ = newFilters.q !== undefined ? newFilters.q : searchTerm;
+    const nextSort = newFilters.sort !== undefined ? newFilters.sort : sortBy;
+
+    if (newFilters.fuel !== undefined) setSelectedFuel(nextFuel);
+    if (newFilters.brand !== undefined) setSelectedBrand(nextBrand);
+    if (newFilters.body !== undefined) setSelectedBodyType(nextBody);
+    if (newFilters.budget !== undefined) setMaxBudget(nextBudget);
+    if (newFilters.q !== undefined) setSearchTerm(nextQ);
+    if (newFilters.sort !== undefined) setSortBy(nextSort as any);
+
+    const nextParams = new URLSearchParams();
+    if (nextFuel && nextFuel !== 'All') nextParams.set('fuel', nextFuel);
+    if (nextBrand && nextBrand !== 'All') nextParams.set('brand', nextBrand);
+    if (nextBody && nextBody !== 'All') nextParams.set('body', nextBody);
+    if (nextBudget && nextBudget < 35) nextParams.set('budget', nextBudget.toString());
+    if (nextQ && nextQ.trim()) nextParams.set('q', nextQ.trim());
+    if (nextSort && nextSort !== 'newest') nextParams.set('sort', nextSort);
+
+    setSearchParams(nextParams, { replace: true });
+  };
 
   // Available filter options
   const brands = useMemo(() => ['All', ...Array.from(new Set(CARS_DATA.map((c) => c.brand)))], []);
@@ -72,38 +130,69 @@ export const CarsListingPage: React.FC = () => {
   }, [searchTerm, selectedBrand, selectedBodyType, selectedFuel, maxBudget, sortBy]);
 
   const handleClearFilters = () => {
-    setSearchTerm('');
     setSelectedBrand('All');
     setSelectedBodyType('All');
     setSelectedFuel('All');
     setMaxBudget(35);
+    setSearchTerm('');
     setSortBy('newest');
+    setSearchParams(new URLSearchParams(), { replace: true });
   };
+
+  // Dynamic Keyword-Rich Metadata based on active page filters
+  let pageTitle = 'New Cars in India 2026: Prices, Specs & Comparison | DriveSmart';
+  let pageDescription =
+    'Explore new cars launched in India in 2026. Filter by brand, fuel type, body style and budget from ₹5 to ₹35 lakh. Find your ideal ride today.';
+  let canonicalPath = 'https://drivesmart-india.vercel.app/new-cars-in-india-2026';
+
+  if (selectedFuel !== 'All') {
+    pageTitle = `Best ${selectedFuel} Cars in India 2026: Prices, Range & Specs | DriveSmart`;
+    pageDescription = `Compare all new ${selectedFuel} cars launched in India in 2026. Check ex-showroom prices, mileage, features, and owner reviews.`;
+    canonicalPath = `https://drivesmart-india.vercel.app/new-cars-in-india-2026?fuel=${selectedFuel}`;
+  } else if (selectedBodyType !== 'All') {
+    pageTitle = `Best ${selectedBodyType} Cars in India 2026: Prices & Models | DriveSmart`;
+    pageDescription = `Explore 2026 ${selectedBodyType} launches in India. Side-by-side comparison of seating, prices, and highway dynamics.`;
+    canonicalPath = `https://drivesmart-india.vercel.app/new-cars-in-india-2026?body=${encodeURIComponent(selectedBodyType)}`;
+  } else if (selectedBrand !== 'All') {
+    pageTitle = `${selectedBrand} Cars in India 2026: Prices, Features & Specs | DriveSmart`;
+    pageDescription = `Check all new 2026 ${selectedBrand} cars in India with latest on-road pricing estimates, features, and expert analysis.`;
+    canonicalPath = `https://drivesmart-india.vercel.app/new-cars-in-india-2026?brand=${encodeURIComponent(selectedBrand)}`;
+  }
 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Latest Cars in India 2026: Prices & Specs | DriveSmart',
-    description:
-      'Explore new cars launched in India in 2026. Filter by brand, fuel type, body style and budget from ₹5 to ₹35 lakh. Find your ideal ride today.',
-    url: 'https://drivesmart-india.vercel.app/cars',
+    name: pageTitle,
+    description: pageDescription,
+    url: canonicalPath,
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: CARS_DATA.map((car, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        url: `https://drivesmart-india.vercel.app/cars/${car.slug}`,
+        url: `https://drivesmart-india.vercel.app/cars/${car.seoSlug}`,
         name: car.name,
       })),
     },
   };
 
+  const quickKeywordPills = [
+    { label: 'All 2026 Cars', action: () => handleClearFilters(), active: selectedFuel === 'All' && selectedBodyType === 'All' && selectedBrand === 'All' && maxBudget === 35 },
+    { label: 'Electric Cars (EV)', action: () => updateFiltersInUrl({ fuel: 'Electric', brand: 'All', body: 'All', budget: 35 }), active: selectedFuel === 'Electric' },
+    { label: 'SUV Cars in India', action: () => updateFiltersInUrl({ fuel: 'All', brand: 'All', body: 'SUV', budget: 35 }), active: selectedBodyType === 'SUV' },
+    { label: 'Budget Cars Under ₹15L', action: () => updateFiltersInUrl({ budget: 15, fuel: 'All', brand: 'All', body: 'All' }), active: maxBudget === 15 },
+    { label: 'CNG Cars', action: () => updateFiltersInUrl({ fuel: 'CNG', brand: 'All', body: 'All', budget: 35 }), active: selectedFuel === 'CNG' },
+    { label: 'Tata Cars', action: () => updateFiltersInUrl({ brand: 'Tata', fuel: 'All', body: 'All', budget: 35 }), active: selectedBrand === 'Tata' },
+    { label: 'Mahindra SUVs', action: () => updateFiltersInUrl({ brand: 'Mahindra', fuel: 'All', body: 'All', budget: 35 }), active: selectedBrand === 'Mahindra' },
+    { label: 'Maruti Suzuki', action: () => updateFiltersInUrl({ brand: 'Maruti Suzuki', fuel: 'All', body: 'All', budget: 35 }), active: selectedBrand === 'Maruti Suzuki' },
+  ];
+
   return (
     <>
       <SEOHead
-        title="Latest Cars in India 2026: Prices & Specs | DriveSmart"
-        description="Explore new cars launched in India in 2026. Filter by brand, fuel type, body style and budget from ₹5 to ₹35 lakh. Find your ideal ride today."
-        canonicalUrl="https://drivesmart-india.vercel.app/cars"
+        title={pageTitle}
+        description={pageDescription}
+        canonicalUrl={canonicalPath}
         type="website"
         schema={schema}
       />
@@ -148,6 +237,29 @@ export const CarsListingPage: React.FC = () => {
           </div>
         </header>
 
+        {/* Quick Keyword Category Filter Shortcuts */}
+        <div className="mb-6">
+          <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5 flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-[#FF6B1A]" />
+            <span>High-Demand Search Categories:</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {quickKeywordPills.map((pill) => (
+              <button
+                key={pill.label}
+                onClick={pill.action}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all shadow-xs ${
+                  pill.active
+                    ? 'bg-[#FF6B1A] text-white ring-2 ring-[#FF6B1A]/40'
+                    : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-[#FF6B1A] hover:text-[#FF6B1A]'
+                }`}
+              >
+                {pill.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Filter & Search Bar Controls */}
         <section
           aria-label="Filter Controls"
@@ -159,7 +271,7 @@ export const CarsListingPage: React.FC = () => {
               <input
                 type="text"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => updateFiltersInUrl({ q: e.target.value })}
                 placeholder="Search by car name, brand, or feature (e.g. Sierra, ADAS, Hybrid)..."
                 className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-[#FF6B1A] focus:ring-1 focus:ring-[#FF6B1A]"
               />
@@ -173,7 +285,7 @@ export const CarsListingPage: React.FC = () => {
               <select
                 id="sort-select"
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as any)}
+                onChange={(e) => updateFiltersInUrl({ sort: e.target.value })}
                 className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2.5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#FF6B1A]"
               >
                 <option value="newest">Featured / 2026 Launches</option>
@@ -192,7 +304,7 @@ export const CarsListingPage: React.FC = () => {
               </label>
               <select
                 value={selectedBrand}
-                onChange={(e) => setSelectedBrand(e.target.value)}
+                onChange={(e) => updateFiltersInUrl({ brand: e.target.value })}
                 className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#FF6B1A]"
               >
                 {brands.map((b) => (
@@ -210,7 +322,7 @@ export const CarsListingPage: React.FC = () => {
               </label>
               <select
                 value={selectedBodyType}
-                onChange={(e) => setSelectedBodyType(e.target.value)}
+                onChange={(e) => updateFiltersInUrl({ body: e.target.value })}
                 className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#FF6B1A]"
               >
                 {bodyTypes.map((type) => (
@@ -228,7 +340,7 @@ export const CarsListingPage: React.FC = () => {
               </label>
               <select
                 value={selectedFuel}
-                onChange={(e) => setSelectedFuel(e.target.value)}
+                onChange={(e) => updateFiltersInUrl({ fuel: e.target.value })}
                 className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-[#FF6B1A]"
               >
                 {fuelOptions.map((f) => (
@@ -251,7 +363,7 @@ export const CarsListingPage: React.FC = () => {
                 max="35"
                 step="1"
                 value={maxBudget}
-                onChange={(e) => setMaxBudget(Number(e.target.value))}
+                onChange={(e) => updateFiltersInUrl({ budget: Number(e.target.value) })}
                 className="w-full accent-[#FF6B1A] cursor-pointer"
               />
               <div className="flex justify-between text-[10px] text-slate-400 mt-1">
@@ -354,7 +466,7 @@ export const CarsListingPage: React.FC = () => {
                     <div className="p-5 space-y-3">
                       <div>
                         <h2 className="text-xl font-extrabold text-slate-900 dark:text-white leading-snug group-hover:text-[#FF6B1A] transition-colors">
-                          <Link to={`/cars/${car.slug}`}>
+                          <Link to={`/cars/${car.seoSlug}`}>
                             {car.name}
                           </Link>
                         </h2>
@@ -414,7 +526,7 @@ export const CarsListingPage: React.FC = () => {
                       {/* Pre-filled EMI link */}
                       {car.priceMinLakh && (
                         <Link
-                          to={`/tools/emi-calculator?price=${car.priceMinLakh}`}
+                          to={`/tools/car-loan-emi-calculator-india?price=${car.priceMinLakh}`}
                           className="inline-flex items-center gap-1 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium"
                           title={`Calculate loan EMI for ${car.name}`}
                         >
@@ -425,7 +537,7 @@ export const CarsListingPage: React.FC = () => {
                     </div>
 
                     <Link
-                      to={`/cars/${car.slug}`}
+                      to={`/cars/${car.seoSlug}`}
                       className="w-full inline-flex items-center justify-center gap-2 bg-[#FF6B1A] hover:bg-[#e05b12] text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-xs transition-colors"
                     >
                       <span>View {car.name} price and features</span>

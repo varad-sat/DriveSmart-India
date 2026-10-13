@@ -21,12 +21,18 @@ import {
   ArrowRight,
   Car,
   Calculator,
+  List,
+  LayoutGrid,
+  BookOpen,
+  SlidersHorizontal,
 } from 'lucide-react';
 
 export const HomePage: React.FC = () => {
   const { isFavourite, toggleFavourite, addToCompare, isInCompare } = useApp();
   const [heroSearch, setHeroSearch] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResult>({ articles: [], cars: [] });
+  const [viewMode, setViewMode] = useState<'linewise' | 'grid'>('linewise');
+  const [activeCategory, setActiveCategory] = useState<string>('all');
 
   const handleHeroSearchChange = (val: string) => {
     setHeroSearch(val);
@@ -92,6 +98,105 @@ export const HomePage: React.FC = () => {
     },
   ];
 
+  const allBlogs = [
+    {
+      id: '01',
+      to: '/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india',
+      title: 'Petrol vs Diesel vs CNG vs EV: Which Car to Buy in 2026?',
+      exactLinkText: 'Petrol vs Diesel vs CNG vs EV: Which Car to Buy in 2026?',
+      actionLabel: 'Read Petrol vs Diesel vs CNG vs EV Comparison',
+      image: '/images/petrol-vs-diesel-vs-cng-vs-ev.webp',
+      imageAlt: 'Petrol vs diesel vs CNG vs EV cars compared at fuel and charging stations',
+      badge: 'Powertrain Breakdown',
+      category: 'powertrain',
+      readTime: '9 min read',
+      tag: '₹/km Cost Analysis',
+      highlights: ['Running Costs', 'Delhi-NCR 10/15 Yr Rules', 'DPF vs Battery'],
+      description:
+        'Compare per-kilometre operational running expenses (₹1.20 EV vs ₹7.50 Petrol), annual servicing charges, Delhi-NCR lifespan rules, and resale values across all four primary fuels.',
+    },
+    {
+      id: '02',
+      to: '/first-car-buying-guide-india-step-by-step',
+      title: 'First Car Buying Guide: 10 Steps for Indian Buyers',
+      exactLinkText: 'First Car Buying Guide: 10 Steps for Indian Buyers',
+      actionLabel: 'Read First Car Buying Guide for Indian Buyers',
+      image: '/images/first-car-buying-guide.webp',
+      imageAlt: 'Modern car showroom with new vehicle on display for first time buyers',
+      badge: 'Step-by-Step Blueprint',
+      category: 'buying',
+      readTime: '10 min read',
+      tag: 'Showroom Protection',
+      highlights: ['20% EMI Rule', 'Daylight PDI Check', 'Zero Dealer Markups'],
+      description:
+        'Master vehicle finance calculations, test-drive checklists, insurance policy add-ons, dealer discount negotiations, and thorough pre-delivery inspection procedures.',
+    },
+    {
+      id: '03',
+      to: '/monsoon-car-care-tips-rainy-season-protection',
+      title: 'Monsoon Car Care Tips: 12 Ways to Protect Your Car',
+      exactLinkText: 'Monsoon Car Care Tips: 12 Ways to Protect Your Car',
+      actionLabel: 'Read Monsoon Car Care Tips & Protection Guide',
+      image: '/images/monsoon-car-care-tips.webp',
+      imageAlt: 'Car windshield wipers clearing heavy rain on wet road during monsoon',
+      badge: 'Seasonal Protection',
+      category: 'maintenance',
+      readTime: '8 min read',
+      tag: 'Rain Safeguards',
+      highlights: ['Hydrostatic Lock Risk', '2.5mm Tyre Tread', 'Underbody Anti-Rust'],
+      description:
+        'Protect your motor from hydrostatic engine stall, rusty underbodies, deteriorated wiper blades, brake fading, and waterlogged urban flash floods.',
+    },
+    {
+      id: '04',
+      to: '/car-insurance-guide-india-zero-dep-explained',
+      title: 'Car Insurance Guide India: Zero Dep, RTI & Engine Protect Explained',
+      exactLinkText: 'Car Insurance Guide India: Zero Dep, RTI & Engine Protect Explained',
+      actionLabel: 'Read Car Insurance Guide India',
+      image: '/images/car-insurance-guide-india.webp',
+      imageAlt: 'Car insurance policy documents and contract signing with pen',
+      badge: 'Insurance & Finance',
+      category: 'insurance',
+      readTime: '8 min read',
+      tag: 'Policy Rider Guide',
+      highlights: ['Zero Depreciation', 'Return to Invoice', 'NCB 50% Transfer'],
+      description:
+        'Understand Zero Depreciation, Return to Invoice (RTI), and Engine Protection riders, and learn how buying directly online saves 20% to 40% on showroom insurance quotes.',
+    },
+    {
+      id: '05',
+      to: '/manual-vs-automatic-cars-india-amt-cvt-dct',
+      title: 'Manual vs Automatic Cars in India: AMT vs CVT vs DCT vs Torque Converter',
+      exactLinkText: 'Manual vs Automatic Cars in India: AMT vs CVT vs DCT vs Torque Converter',
+      actionLabel: 'Read Manual vs Automatic Cars in India Guide',
+      image: '/images/manual-vs-automatic-cars-india.webp',
+      imageAlt: 'Modern car interior showing automatic transmission gear selector and center console',
+      badge: 'Drivetrain Analysis',
+      category: 'powertrain',
+      readTime: '9 min read',
+      tag: 'Gearbox Guide',
+      highlights: ['Stop & Go Traffic', 'Clutch Overheating', 'Real City Mileage'],
+      description:
+        'Compare AMT, CVT, DCT, and Torque Converter transmissions for shift smoothness, bumper-to-bumper city crawl convenience, fuel economy, and long-term durability.',
+    },
+    {
+      id: '06',
+      to: '/car-mileage-tips-india-boost-fuel-economy',
+      title: 'Car Mileage Tips India: 10 Proven Ways to Boost Fuel Economy',
+      exactLinkText: 'Car Mileage Tips India: 10 Proven Ways to Boost Fuel Economy',
+      actionLabel: 'Read Car Mileage Tips India Guide',
+      image: '/images/car-mileage-tips-india.webp',
+      imageAlt: 'Modern car digital dashboard and speedometer cruising on the expressway',
+      badge: 'Fuel Efficiency Tips',
+      category: 'maintenance',
+      readTime: '8 min read',
+      tag: 'Fuel Savings',
+      highlights: ['Cold PSI Checks', '80 km/h Sweet Spot', 'Cut Signal Idling'],
+      description:
+        'Ten actionable techniques to boost real car mileage on Indian roads: cold tyre pressure checks, expressway cruising speeds, air filter maintenance, and idle fuel waste reduction.',
+    },
+  ];
+
   return (
     <>
       <SEOHead
@@ -119,20 +224,20 @@ export const HomePage: React.FC = () => {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
               <Link
-                to="/first-car-buying-guide"
+                to="/first-car-buying-guide-india-step-by-step"
                 className="inline-flex items-center gap-2 bg-[#FF6B1A] hover:bg-[#e05b12] text-white text-base font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-400"
               >
                 <span>Read our first car buying guide</span>
                 <ChevronRight className="w-5 h-5" />
               </Link>
               <Link
-                to="/petrol-vs-diesel-vs-cng-vs-ev"
+                to="/petrol-vs-diesel-vs-cng-vs-ev-car-comparison-india"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white text-base font-semibold px-6 py-3.5 rounded-xl border border-white/20 transition-all"
               >
                 <span>Compare Fuel Options</span>
               </Link>
               <Link
-                to="/cars"
+                to="/new-cars-in-india-2026"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white text-base font-semibold px-6 py-3.5 rounded-xl border border-white/20 transition-all"
               >
                 <Car className="w-4 h-4 text-[#FF6B1A]" />
@@ -192,7 +297,7 @@ export const HomePage: React.FC = () => {
                           {searchResults.cars.map((car) => (
                             <Link
                               key={car.slug}
-                              to={`/cars/${car.slug}`}
+                              to={`/cars/${car.seoSlug}`}
                               className="flex items-center justify-between p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-xs"
                             >
                               <div>
@@ -217,176 +322,249 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* All Blogs Featured Directly at the Start of the Page */}
+          {/* All Blogs Featured Directly at the Start of the Page - Linewise Feed */}
           <div id="latest-guides" className="mt-10 mb-10 text-left">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#FF6B1A] flex items-center gap-1.5">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#FF6B1A] flex items-center gap-1.5 mb-1">
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span>Featured Editorial Guides</span>
+                  <span>Featured Editorial Guides & Research</span>
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                   All Car Buying & Ownership Blogs
                 </h2>
+                <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                  6 in-depth, research-backed guides written for Indian car buyers and owners
+                </p>
               </div>
-              <span className="text-xs font-semibold uppercase tracking-wider text-slate-300 bg-white/10 px-3 py-1.5 rounded-full border border-white/15 self-start sm:self-auto">
-                Updated October 2026
-              </span>
+
+              {/* View Mode Toggle: Linewise (List) vs Grid */}
+              <div className="flex items-center gap-2 self-start md:self-auto bg-slate-900/90 p-1 rounded-xl border border-slate-700/80 shadow-md">
+                <button
+                  type="button"
+                  onClick={() => setViewMode('linewise')}
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    viewMode === 'linewise'
+                      ? 'bg-[#FF6B1A] text-white shadow-sm'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                  aria-label="Switch to Linewise list view"
+                >
+                  <List className="w-3.5 h-3.5" />
+                  <span>Linewise (List)</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setViewMode('grid')}
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                    viewMode === 'grid'
+                      ? 'bg-[#FF6B1A] text-white shadow-sm'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                  aria-label="Switch to Grid view"
+                >
+                  <LayoutGrid className="w-3.5 h-3.5" />
+                  <span>Grid</span>
+                </button>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Card 1: Petrol vs Diesel vs CNG vs EV */}
-              <article className="bg-white dark:bg-slate-900 rounded-2xl border border-white/10 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 transition-all group">
-                <div>
-                  <div className="relative overflow-hidden">
-                    <SmartImage
-                      src="/images/petrol-vs-diesel-vs-cng-vs-ev.webp"
-                      alt="Petrol vs diesel vs CNG vs EV cars compared at fuel and charging stations"
-                      width={600}
-                      height={340}
-                      loading="eager"
-                      className="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-3 left-3 bg-[#0B1F3A]/90 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 border border-white/20">
-                      <Fuel className="w-3 h-3 text-[#FF6B1A]" />
-                      <span>Powertrain Analysis</span>
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                      <span>9 min read</span>
-                      <span>•</span>
-                      <span>₹/km Running Costs</span>
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug mb-2 group-hover:text-[#FF6B1A] transition-colors">
-                      <Link
-                        to="/petrol-vs-diesel-vs-cng-vs-ev"
-                        className="hover:text-[#FF6B1A] transition-colors"
-                      >
-                        Petrol vs Diesel vs CNG vs EV: Which Car to Buy in 2026?
-                      </Link>
-                    </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                      Compare per-kilometre operational running expenses, annual servicing charges, Delhi-NCR lifespan rules, and resale values across all four primary fuels.
-                    </p>
-                  </div>
-                </div>
-                <div className="p-5 pt-0 border-t border-slate-100 dark:border-slate-800">
-                  <Link
-                    to="/petrol-vs-diesel-vs-cng-vs-ev"
-                    className="text-xs font-bold text-[#FF6B1A] hover:text-[#e05b12] inline-flex items-center gap-1.5 mt-3"
-                  >
-                    <span>Petrol vs Diesel vs CNG vs EV: Which Car to Buy in 2026?</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </article>
-
-              {/* Card 2: First Car Buying Guide */}
-              <article className="bg-white dark:bg-slate-900 rounded-2xl border border-white/10 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 transition-all group">
-                <div>
-                  <div className="relative overflow-hidden">
-                    <SmartImage
-                      src="/images/first-car-buying-guide.webp"
-                      alt="First car buying guide: young buyer receiving keys of a new car"
-                      width={600}
-                      height={340}
-                      loading="eager"
-                      className="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-3 left-3 bg-[#0B1F3A]/90 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 border border-white/20">
-                      <Compass className="w-3 h-3 text-[#FF6B1A]" />
-                      <span>Step-by-Step Blueprint</span>
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                      <span>10 min read</span>
-                      <span>•</span>
-                      <span>10-Step Checklist</span>
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug mb-2 group-hover:text-[#FF6B1A] transition-colors">
-                      <Link
-                        to="/first-car-buying-guide"
-                        className="hover:text-[#FF6B1A] transition-colors"
-                      >
-                        First Car Buying Guide: 10 Steps for Indian Buyers
-                      </Link>
-                    </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                      Master vehicle finance calculations, test-drive checklists, insurance policy add-ons, and thorough pre-delivery inspection procedures.
-                    </p>
-                  </div>
-                </div>
-                <div className="p-5 pt-0 border-t border-slate-100 dark:border-slate-800">
-                  <Link
-                    to="/first-car-buying-guide"
-                    className="text-xs font-bold text-[#FF6B1A] hover:text-[#e05b12] inline-flex items-center gap-1.5 mt-3"
-                  >
-                    <span>First Car Buying Guide: 10 Steps for Indian Buyers</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </article>
-
-              {/* Card 3: Monsoon Car Care Tips */}
-              <article className="bg-white dark:bg-slate-900 rounded-2xl border border-white/10 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 transition-all group">
-                <div>
-                  <div className="relative overflow-hidden">
-                    <SmartImage
-                      src="/images/monsoon-car-care-tips.webp"
-                      alt="Monsoon car care tips: car driving safely on a wet road in heavy rain"
-                      width={600}
-                      height={340}
-                      loading="eager"
-                      className="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-3 left-3 bg-[#0B1F3A]/90 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 border border-white/20">
-                      <ShieldCheck className="w-3 h-3 text-[#FF6B1A]" />
-                      <span>Seasonal Protection</span>
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                      <span>8 min read</span>
-                      <span>•</span>
-                      <span>12 Safety Tips</span>
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug mb-2 group-hover:text-[#FF6B1A] transition-colors">
-                      <Link
-                        to="/monsoon-car-care-tips"
-                        className="hover:text-[#FF6B1A] transition-colors"
-                      >
-                        Monsoon Car Care Tips: 12 Ways to Protect Your Car
-                      </Link>
-                    </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                      Protect your motor from hydrostatic engine stall, rusty underbodies, deteriorated wiper blades, brake fading, and waterlogged urban flash floods.
-                    </p>
-                  </div>
-                </div>
-                <div className="p-5 pt-0 border-t border-slate-100 dark:border-slate-800">
-                  <Link
-                    to="/monsoon-car-care-tips"
-                    className="text-xs font-bold text-[#FF6B1A] hover:text-[#e05b12] inline-flex items-center gap-1.5 mt-3"
-                  >
-                    <span>Monsoon Car Care Tips: 12 Ways to Protect Your Car</span>
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </article>
+            {/* Category Filter Pills */}
+            <div className="flex flex-wrap items-center gap-2 mb-6 pb-2 overflow-x-auto text-xs">
+              {[
+                { id: 'all', label: 'All Blogs (6)' },
+                { id: 'buying', label: 'Buying & Budget' },
+                { id: 'powertrain', label: 'Powertrains & Fuel' },
+                { id: 'maintenance', label: 'Maintenance & Care' },
+                { id: 'insurance', label: 'Insurance & Protection' },
+              ].map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
+                    activeCategory === cat.id
+                      ? 'bg-white text-[#0B1F3A] font-bold shadow-sm'
+                      : 'bg-white/10 text-slate-300 hover:bg-white/20 border border-white/10'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
             </div>
+
+            {/* LINEWISE (LIST) VIEW */}
+            {viewMode === 'linewise' ? (
+              <div className="space-y-4">
+                {allBlogs
+                  .filter(
+                    (blog) => activeCategory === 'all' || blog.category === activeCategory
+                  )
+                  .map((blog) => (
+                    <article
+                      key={blog.to}
+                      className="bg-white dark:bg-slate-900 rounded-2xl border border-white/10 dark:border-slate-800 shadow-xl overflow-hidden hover:shadow-2xl hover:border-[#FF6B1A]/40 transition-all group flex flex-col md:flex-row items-stretch h-[470px] md:h-64 w-full"
+                    >
+                      {/* Left: Thumbnail image with badge */}
+                      <div className="w-full md:w-72 lg:w-80 shrink-0 h-48 md:h-full relative overflow-hidden bg-slate-100 dark:bg-slate-800">
+                        <SmartImage
+                          src={blog.image}
+                          alt={blog.imageAlt}
+                          width={600}
+                          height={340}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute top-3 left-3 bg-[#0B1F3A]/90 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 border border-white/20">
+                          <span className="text-[#FF6B1A] font-black">{blog.id}</span>
+                          <span>{blog.badge}</span>
+                        </div>
+                      </div>
+
+                      {/* Right: Linewise Content Details */}
+                      <div className="p-5 md:p-6 flex flex-col justify-between flex-1 min-w-0 h-full overflow-hidden">
+                        <div>
+                          <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-slate-500 dark:text-slate-400 h-5 shrink-0">
+                            <span className="inline-flex items-center gap-1 text-[#FF6B1A] bg-orange-50 dark:bg-orange-950/40 px-2 py-0.5 rounded text-[11px] font-bold">
+                              {blog.tag}
+                            </span>
+                            <span>•</span>
+                            <span>{blog.readTime}</span>
+                            <span>•</span>
+                            <span>Updated Oct 2026</span>
+                          </div>
+
+                          <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white leading-snug line-clamp-2 h-14 flex items-center mb-1 group-hover:text-[#FF6B1A] transition-colors">
+                            <Link to={blog.to} className="line-clamp-2">{blog.title}</Link>
+                          </h3>
+
+                          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 h-10 mb-2 overflow-hidden">
+                            {blog.description}
+                          </p>
+
+                          {/* Quick Highlights / Bullet Tags */}
+                          <div className="flex items-center gap-1.5 mb-2 h-7 overflow-hidden shrink-0">
+                            {blog.highlights.map((item, idx) => (
+                              <span
+                                key={idx}
+                                className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 shrink-0"
+                              >
+                                ✓ {item}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="pt-2.5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between shrink-0 h-10 mt-auto">
+                          <Link
+                            to={blog.to}
+                            className="text-xs sm:text-sm font-bold text-[#FF6B1A] hover:text-[#e05b12] inline-flex items-center gap-1.5 group-hover:underline truncate max-w-[calc(100%-110px)]"
+                          >
+                            <span className="truncate">{blog.exactLinkText}</span>
+                            <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1 shrink-0" />
+                          </Link>
+                          <Link
+                            to={blog.to}
+                            className="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-[#FF6B1A]/10 text-[#FF6B1A] hover:bg-[#FF6B1A] hover:text-white text-xs font-bold transition-colors shrink-0"
+                          >
+                            <span>Read guide</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+              </div>
+            ) : (
+              /* GRID VIEW */
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {allBlogs
+                  .filter(
+                    (blog) => activeCategory === 'all' || blog.category === activeCategory
+                  )
+                  .map((blog) => (
+                    <article
+                      key={blog.to}
+                      className="bg-white dark:bg-slate-900 rounded-2xl border border-white/10 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1 transition-all group h-[480px] w-full"
+                    >
+                      <div className="h-48 w-full shrink-0 relative overflow-hidden bg-slate-100 dark:bg-slate-800">
+                        <SmartImage
+                          src={blog.image}
+                          alt={blog.imageAlt}
+                          width={600}
+                          height={340}
+                          loading="lazy"
+                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute top-3 left-3 bg-[#0B1F3A]/90 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1.5 border border-white/20">
+                          <span className="text-[#FF6B1A] font-black">{blog.id}</span>
+                          <span>{blog.badge}</span>
+                        </div>
+                      </div>
+
+                      <div className="p-5 flex-1 flex flex-col justify-between min-w-0 overflow-hidden">
+                        <div>
+                          <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-slate-500 dark:text-slate-400 h-5 shrink-0">
+                            <span className="inline-flex items-center gap-1 text-[#FF6B1A] bg-orange-50 dark:bg-orange-950/40 px-2 py-0.5 rounded text-[11px] font-bold">
+                              {blog.tag}
+                            </span>
+                            <span>•</span>
+                            <span>{blog.readTime}</span>
+                          </div>
+
+                          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-snug line-clamp-2 h-14 flex items-center mb-2 group-hover:text-[#FF6B1A] transition-colors">
+                            <Link to={blog.to} className="line-clamp-2">{blog.title}</Link>
+                          </h3>
+
+                          <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 h-14 mb-3 overflow-hidden">
+                            {blog.description}
+                          </p>
+
+                          {/* Highlights pills */}
+                          <div className="flex items-center gap-1.5 mb-2 h-7 overflow-hidden shrink-0">
+                            {blog.highlights.slice(0, 2).map((item, idx) => (
+                              <span
+                                key={idx}
+                                className="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 shrink-0"
+                              >
+                                ✓ {item}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between shrink-0 h-11 mt-auto">
+                          <Link
+                            to={blog.to}
+                            className="text-xs font-bold text-[#FF6B1A] hover:text-[#e05b12] inline-flex items-center gap-1 truncate max-w-[calc(100%-95px)]"
+                          >
+                            <span className="truncate">{blog.exactLinkText}</span>
+                            <ChevronRight className="w-3.5 h-3.5 shrink-0" />
+                          </Link>
+                          <Link
+                            to={blog.to}
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#FF6B1A]/10 text-[#FF6B1A] hover:bg-[#FF6B1A] hover:text-white text-[11px] font-bold transition-colors shrink-0"
+                          >
+                            <span>Read</span>
+                            <ArrowRight className="w-3 h-3" />
+                          </Link>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+              </div>
+            )}
           </div>
 
           {/* Hero Showroom Image Banner */}
           <div className="max-w-4xl mx-auto pt-2">
             <SmartImage
               src="/images/car-buying-guide-india-hero.webp"
-              alt="Car buying guide India showing a family choosing a new car at a showroom"
+              alt="Expressway with modern cars on an open Indian highway road"
               width={1200}
               height={630}
               loading="lazy"
-              caption="DriveSmart India guides you through showrooms, loan financing, and fuel comparisons."
+              caption="DriveSmart India guides you through modern Indian highways, showroom negotiations, and vehicle ownership."
             />
           </div>
         </div>
@@ -461,7 +639,7 @@ export const HomePage: React.FC = () => {
               </h2>
             </div>
             <Link
-              to="/cars"
+              to="/new-cars-in-india-2026"
               className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B1A] hover:underline"
             >
               <span>View all 10 new 2026 cars</span>
@@ -511,7 +689,7 @@ export const HomePage: React.FC = () => {
                     </div>
 
                     <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#FF6B1A] transition-colors">
-                      <Link to={`/cars/${car.slug}`}>
+                      <Link to={`/cars/${car.seoSlug}`}>
                         {car.name}
                       </Link>
                     </h3>
@@ -534,7 +712,7 @@ export const HomePage: React.FC = () => {
 
                   <div className="pt-3 border-t border-slate-100 dark:border-slate-800 mt-3">
                     <Link
-                      to={`/cars/${car.slug}`}
+                      to={`/cars/${car.seoSlug}`}
                       className="text-xs font-bold text-[#FF6B1A] hover:underline inline-flex items-center gap-1"
                     >
                       <span>View {car.name} price and features</span>
