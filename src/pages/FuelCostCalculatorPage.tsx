@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
+import { SmartImage } from '../components/SmartImage';
+import { SEO_DATA } from '../data/seoKeywords';
 import {
   BarChart,
   Bar,
@@ -142,12 +144,15 @@ export const FuelCostCalculatorPage: React.FC = () => {
     url: 'https://drivesmart-india.vercel.app/tools/car-fuel-cost-calculator-india',
   };
 
+  const fuelSeo = SEO_DATA['/tools/fuel-cost-calculator'];
+
   return (
     <>
       <SEOHead
-        title="Car Fuel Cost Calculator India: Petrol vs EV | DriveSmart"
-        description="Compare monthly and yearly driving costs for Petrol, Diesel, CNG, and Electric cars based on your monthly distance. Highlight the cheapest fuel with DriveSmart."
+        title={fuelSeo.title}
+        description={fuelSeo.metaDescription}
         canonicalUrl="https://drivesmart-india.vercel.app/tools/car-fuel-cost-calculator-india"
+        keywords={`${fuelSeo.mainKeyword}, ${fuelSeo.relatedKeywords.join(', ')}`}
         type="website"
         schema={schema}
       />
@@ -176,7 +181,7 @@ export const FuelCostCalculatorPage: React.FC = () => {
           </ol>
         </nav>
 
-        {/* Header */}
+        {/* Header (Single H1) */}
         <header className="mb-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
@@ -185,10 +190,10 @@ export const FuelCostCalculatorPage: React.FC = () => {
                 <span>Running Cost Comparison</span>
               </span>
               <h1 className="text-3xl sm:text-4xl font-black text-[#0B1F3A] dark:text-white tracking-tight">
-                Fuel Running Cost Calculator
+                Fuel Cost Calculator India: Running Cost Analysis
               </h1>
               <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
-                Compare actual monthly and annual fuel expenditures between Petrol, Diesel, CNG, and Electric vehicles tailored to your exact monthly driving distance.
+                Use our <strong>fuel cost calculator India</strong> to evaluate <strong>petrol vs CNG cost</strong> differences and deploy our <strong>EV running cost calculator</strong> to benchmark real expenses for your monthly commute.
               </p>
             </div>
 
@@ -477,6 +482,39 @@ export const FuelCostCalculatorPage: React.FC = () => {
             </div>
           </div>
         </div>
+
+        {/* Informational SEO H2 & Conclusion Section */}
+        <section className="mt-12 p-6 sm:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 space-y-6">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40">
+            <SmartImage
+              src="/images/petrol-vs-diesel-vs-cng-vs-ev.webp"
+              alt="Fuel cost calculator India infographic comparing petrol vs CNG cost and electric running expenses"
+              width={800}
+              height={350}
+              className="w-full h-44 object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-[#0B1F3A] dark:text-white mb-1">
+              Fuel Cost Calculator India: Powertrain Economics
+            </h2>
+            <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-4">
+              Evaluating Petrol vs CNG Cost & EV Running Cost Calculator Insights
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+              Calculating true operational expenditure goes far beyond checking pump prices. While petrol remains versatile for low runtimes under 500 km per month, evaluating <strong>petrol vs CNG cost</strong> allows commuters traveling 40 km daily to save significant money. For heavy urban drivers, our <strong>EV running cost calculator</strong> proves that electricity charges under ₹1.50 per km generate massive savings across 5 years.
+            </p>
+          </div>
+
+          {/* Conclusion */}
+          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-center">
+            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              In conclusion, running this <strong>fuel cost calculator India</strong> before choosing between petrol, CNG, or EV ensures your choice aligns with your actual monthly commute distance.
+            </p>
+          </div>
+        </section>
       </div>
     </>
   );

@@ -210,6 +210,7 @@ export const HomePage: React.FC = () => {
         keywords={`${homeSeo.mainKeyword}, ${homeSeo.relatedKeywords.join(', ')}`}
         type="website"
         schema={schema}
+        googleSiteVerification="f9FRqG-cOTKxDuoAWbfCdP6Q_y1zqocgWjiLngL8RLU"
       />
 
       {/* Hero Section */}

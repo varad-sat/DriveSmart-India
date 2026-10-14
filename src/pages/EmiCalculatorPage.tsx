@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { SEOHead } from '../components/SEOHead';
+import { SmartImage } from '../components/SmartImage';
+import { SEO_DATA } from '../data/seoKeywords';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import {
   Calculator,
@@ -93,12 +95,15 @@ export const EmiCalculatorPage: React.FC = () => {
     url: 'https://drivesmart-india.vercel.app/tools/car-loan-emi-calculator-india',
   };
 
+  const emiSeo = SEO_DATA['/tools/emi-calculator'];
+
   return (
     <>
       <SEOHead
-        title="Car Loan EMI Calculator India: Monthly Cost | DriveSmart"
-        description="Calculate your car loan monthly EMI, total interest and down payment with our interactive sliders and donut chart. Plan your car finance with DriveSmart."
+        title={emiSeo.title}
+        description={emiSeo.metaDescription}
         canonicalUrl="https://drivesmart-india.vercel.app/tools/car-loan-emi-calculator-india"
+        keywords={`${emiSeo.mainKeyword}, ${emiSeo.relatedKeywords.join(', ')}`}
         type="website"
         schema={schema}
       />
@@ -127,17 +132,17 @@ export const EmiCalculatorPage: React.FC = () => {
           </ol>
         </nav>
 
-        {/* Page Header */}
+        {/* Page Header (Single H1) */}
         <header className="mb-8">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-orange-50 dark:bg-orange-950/40 text-[#FF6B1A] mb-2">
             <Calculator className="w-3.5 h-3.5" />
             <span>Interactive Financial Planning</span>
           </span>
           <h1 className="text-3xl sm:text-4xl font-black text-[#0B1F3A] dark:text-white tracking-tight">
-            Car Loan EMI Calculator
+            Car Loan EMI Calculator India: Monthly Loan Finance
           </h1>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
-            Estimate your monthly auto loan installments, total interest charges, and optimal down payment using India’s standard reducing-balance loan formula.
+            Estimate your <strong>monthly car EMI</strong>, total interest payouts, and optimal down payment using our interactive <strong>car loan EMI calculator</strong>. Compare bank <strong>car loan interest rate</strong> options across 3 to 7 year tenures.
           </p>
         </header>
 
@@ -355,10 +360,27 @@ export const EmiCalculatorPage: React.FC = () => {
         </div>
 
         {/* 20/4/10 Rule Educational Advisory Section */}
-        <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 space-y-4">
-          <h2 className="text-xl font-bold text-[#0B1F3A] dark:text-white">
-            How to Apply the 20/4/10 Car Financing Rule in India
-          </h2>
+        <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 space-y-6">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40">
+            <SmartImage
+              src="/images/first-car-buying-guide.webp"
+              alt="Car loan EMI calculator visual guide comparing interest rates and monthly car EMI"
+              width={800}
+              height={350}
+              className="w-full h-44 object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-[#0B1F3A] dark:text-white mb-1">
+              Car Loan EMI Calculator: Smart 20/4/10 Financing Strategy
+            </h2>
+            <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-4">
+              Evaluate Car Loan Interest Rate Options & Monthly Car EMI
+            </h3>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-700 dark:text-slate-300">
             <div className="p-4 rounded-2xl bg-orange-50/60 dark:bg-orange-950/20 border border-orange-200 dark:border-orange-900/40 space-y-1.5">
               <span className="font-extrabold text-[#FF6B1A] text-sm block">
@@ -385,6 +407,16 @@ export const EmiCalculatorPage: React.FC = () => {
               </p>
             </div>
           </div>
+        </section>
+
+        {/* Conclusion */}
+        <section className="bg-slate-100 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 text-center space-y-2 mt-8">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-white">
+            Smart Car Financing with DriveSmart
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            In conclusion, running our <strong>car loan EMI calculator</strong> before visiting dealership finance desks prevents high interest penalties and protects your household cash flow.
+          </p>
         </section>
       </div>
     </>

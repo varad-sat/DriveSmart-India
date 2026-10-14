@@ -140,13 +140,17 @@ export const ElectricCarsArticlePage: React.FC = () => {
             </p>
           </section>
 
-          {/* H2: Choosing the Best Electric Car in India */}
+          {/* H2: Choosing the Best Electric Car in India - AEO Question & Answer format */}
           <section className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-              Choosing the Best Electric Car in India for Your Daily Needs
+              Which Is the Best Electric Car in India for Daily Commuting?
             </h2>
+            {/* Direct Answer Paragraph for AEO */}
+            <p className="text-base text-slate-700 dark:text-slate-300 font-medium bg-emerald-50/70 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-lg leading-relaxed">
+              The <strong>best electric car in India</strong> for daily commuting provides a real-world driving range of 350+ km, fast DC charging compatibility, and liquid-cooled battery thermal management. Leading models like the Maruti Suzuki e Vitara and Mahindra XEV 9S offer low running expenses of roughly ₹1.25 per km alongside 8-year battery warranty coverage.
+            </p>
             <p>
-              Selecting the <strong>best electric car in India</strong> requires analyzing your weekly commuting mileage against available charging infrastructure at your apartment or independent home. For buyers covering over 1,200 km each month, the operational savings compared to petrol cars exceed ₹75,000 annually.
+              Selecting the best electric car in India requires analyzing your weekly commuting mileage against available charging infrastructure at your apartment or independent home. For buyers covering over 1,200 km each month, the operational savings compared to petrol cars exceed ₹75,000 annually.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-6">
@@ -195,13 +199,17 @@ export const ElectricCarsArticlePage: React.FC = () => {
             </p>
           </section>
 
-          {/* H2: Understanding Real EV Price in India and Total Cost of Ownership */}
+          {/* H2: Understanding Real EV Price in India - AEO Question & Answer format */}
           <section className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-              Understanding Real EV Price in India and Total Running Cost
+              How Does EV Price in India Compare to Long-Term Fuel Savings?
             </h2>
+            {/* Direct Answer Paragraph for AEO */}
+            <p className="text-base text-slate-700 dark:text-slate-300 font-medium bg-emerald-50/70 dark:bg-emerald-950/30 border-l-4 border-emerald-500 p-4 rounded-r-lg leading-relaxed">
+              While upfront <strong>EV price in India</strong> ranges between ₹16 Lakh and ₹28 Lakh for mainstream models, electric cars offset the purchase premium within 30,000 to 40,000 kilometres of driving through cheap ₹1.25/km home charging, low 5% GST levies, and zero road tax exemptions in multiple Indian states.
+            </p>
             <p>
-              When evaluating <strong>EV price in India</strong>, looking solely at the ex-showroom invoice overlooks decisive fiscal benefits. Thanks to nationwide concessions, electric cars attract only 5% Goods and Services Tax (GST) compared to 28% + 22% cess on combustion vehicles, and several states waive RTO registration charges completely.
+              When evaluating EV price in India, looking solely at the ex-showroom invoice overlooks decisive fiscal benefits. Thanks to nationwide concessions, electric cars attract only 5% Goods and Services Tax (GST) compared to 28% + 22% cess on combustion vehicles, and several states waive RTO registration charges completely.
             </p>
 
             <div className="overflow-x-auto my-6 not-prose">
@@ -305,7 +313,7 @@ export const ElectricCarsArticlePage: React.FC = () => {
         </div>
 
         <div className="mt-12">
-          <RelatedArticles currentSlug="electric-cars-in-india-2026" />
+          <RelatedArticles currentPath="/blog/electric-cars-in-india-2026" />
         </div>
       </article>
     </>

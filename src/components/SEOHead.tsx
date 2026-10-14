@@ -10,6 +10,7 @@ interface SEOHeadProps {
   schema?: object | object[];
   keywords?: string;
   robots?: string;
+  googleSiteVerification?: string;
 }
 
 export const SEOHead: React.FC<SEOHeadProps> = ({
@@ -21,6 +22,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   schema,
   keywords,
   robots,
+  googleSiteVerification,
 }) => {
   return (
     <Helmet>
@@ -29,6 +31,9 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       {robots && <meta name="robots" content={robots} />}
+      {googleSiteVerification && (
+        <meta name="google-site-verification" content={googleSiteVerification} />
+      )}
       <link rel="canonical" href={canonicalUrl} />
 
       {/* OpenGraph Metadata */}

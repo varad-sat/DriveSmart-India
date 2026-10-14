@@ -112,7 +112,7 @@ export const BlogListingPage: React.FC = () => {
           <div className="flex items-center justify-between mb-6">
             <div>
               <h2 className="text-2xl font-bold text-[#0B1F3A] dark:text-white">
-                Essential Car Buying Tips and Editorial Guides
+                Car Blog India: Essential Car Buying Tips and Guides
               </h2>
               <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                 Practical car buying tips that simplify financing, powertrain selection, and long-term maintenance.

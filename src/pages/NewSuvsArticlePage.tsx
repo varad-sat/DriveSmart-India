@@ -140,13 +140,17 @@ export const NewSuvsArticlePage: React.FC = () => {
             </p>
           </section>
 
-          {/* H2: Latest SUV Launches India to Watch Out For */}
+          {/* H2: Latest SUV Launches India to Watch Out For - AEO Question & Answer format */}
           <section className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-              Latest SUV Launches India: Key Models Arriving in 2026
+              What Are the Latest SUV Launches India to Watch for in 2026?
             </h2>
+            {/* Direct Answer Paragraph for AEO */}
+            <p className="text-base text-slate-700 dark:text-slate-300 font-medium bg-orange-50/70 dark:bg-orange-950/30 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg leading-relaxed">
+              The <strong>latest SUV launches India</strong> include the reborn Tata Sierra lifestyle SUV, next-generation Hyundai Venue, upgraded Kia Seltos, and the rugged Renault Duster. These models deliver Level 2 ADAS active safety suites, panoramic sunroofs, refined turbo-petrol powertrains, and high Bharat NCAP crash protection tailored for Indian highways.
+            </p>
             <p>
-              Automakers have planned their most ambitious product offensives yet, making the <strong>latest SUV launches India</strong> more diverse and technologically sophisticated than ever before. Whether you seek traditional turbo-petrol punch, torque-rich diesel long-range capabilities, or zero-tailpipe emission battery packs, this year brings stellar options across segments.
+              Automakers have planned their most ambitious product offensives yet, making new SUVs in India 2026 more diverse and technologically sophisticated than ever before. Whether you seek traditional turbo-petrol punch, torque-rich diesel long-range capabilities, or zero-tailpipe emission battery packs, this year brings stellar options across segments.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose my-6">
@@ -194,13 +198,17 @@ export const NewSuvsArticlePage: React.FC = () => {
             </p>
           </section>
 
-          {/* H2: Finding the Best SUV Under 15 Lakh */}
+          {/* H2: Finding the Best SUV Under 15 Lakh - AEO Question & Answer format */}
           <section className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-              Finding the Best SUV Under 15 Lakh for Indian Roads
+              Which Is the Best SUV Under 15 Lakh for Indian Roads?
             </h2>
+            {/* Direct Answer Paragraph for AEO */}
+            <p className="text-base text-slate-700 dark:text-slate-300 font-medium bg-orange-50/70 dark:bg-orange-950/30 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg leading-relaxed">
+              The <strong>best SUV under 15 lakh</strong> for Indian roads includes the Hyundai Venue, Kia Syros, and entry-level variants of the Tata Sierra. These crossovers offer 5-star crash resilience, high ground clearance exceeding 190 mm, robust suspensions for rough city roads, and fuel economy between 17 and 21 km/l.
+            </p>
             <p>
-              The ₹10 Lakh to ₹15 Lakh price band represents the sweet spot of the Indian market. Securing the <strong>best SUV under 15 lakh</strong> requires balancing mechanical reliability, crash safety standards, fuel efficiency, and post-purchase servicing network presence.
+              The ₹10 Lakh to ₹15 Lakh price band represents the sweet spot of the Indian market. Securing the best SUV under 15 lakh requires balancing mechanical reliability, crash safety standards, fuel efficiency, and post-purchase servicing network presence.
             </p>
 
             <div className="overflow-x-auto my-6 not-prose">
@@ -309,7 +317,7 @@ export const NewSuvsArticlePage: React.FC = () => {
         </div>
 
         <div className="mt-12">
-          <RelatedArticles currentSlug="new-suvs-in-india-2026" />
+          <RelatedArticles currentPath="/blog/new-suvs-in-india-2026" />
         </div>
       </article>
     </>

@@ -221,6 +221,9 @@ export const ContactPage: React.FC = () => {
 
         {/* Conclusion / Last Paragraph */}
         <section className="bg-slate-100 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 text-center">
+          <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+            How to Contact DriveSmart India for Support
+          </h2>
           <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
             In conclusion, whenever you need transparent automotive research or want to <strong>contact DriveSmart India</strong>, our team is always eager to help you negotiate with dealers and choose the best car for your budget.
           </p>

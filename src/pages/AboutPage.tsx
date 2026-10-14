@@ -119,7 +119,7 @@ export const AboutPage: React.FC = () => {
         {/* Conclusion / Last Paragraph */}
         <section className="bg-slate-100 dark:bg-slate-900/60 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 text-center">
           <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-            Drive With Unwavering Confidence
+            Why DriveSmart India Is Built for Consumers First
           </h2>
           <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-6 leading-relaxed">
             In conclusion, <strong>DriveSmart India</strong> remains steadfastly committed to serving buyers across India with trustworthy data, transparent toolkits, and practical ownership wisdom.
