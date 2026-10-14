@@ -6,6 +6,7 @@ import { TableOfContents } from '../components/TableOfContents';
 import { RelatedArticles } from '../components/RelatedArticles';
 import { ReadingProgressBar } from '../components/ReadingProgressBar';
 import { ShareButtons } from '../components/ShareButtons';
+import { SEO_DATA } from '../data/seoKeywords';
 import {
   Calendar,
   Clock,
@@ -147,14 +148,17 @@ export const MonsoonCarePage: React.FC = () => {
     },
   ];
 
+  const seo = SEO_DATA['/monsoon-car-care-tips'];
+
   return (
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="Monsoon Car Care Tips: Rainy Season Guide | DriveSmart"
-        description="Monsoon car care tips to protect your car in the rain: tyres, wipers, brakes, rust prevention and more. Keep your car safe this season. Read now!"
+        title={seo.title}
+        description={seo.metaDescription}
         canonicalUrl="https://drivesmart-india.vercel.app/monsoon-car-care-tips-rainy-season-protection"
         ogImage="https://drivesmart-india.vercel.app/images/monsoon-car-care-tips.webp"
+        keywords={`${seo.mainKeyword}, ${seo.relatedKeywords.join(', ')}`}
         type="article"
         schema={schema}
       />
@@ -171,7 +175,7 @@ export const MonsoonCarePage: React.FC = () => {
             <li className="flex items-center space-x-2">
               <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
               <span className="text-slate-800 font-medium">
-                Monsoon Car Care Tips
+                Monsoon Car Care Tips India
               </span>
             </li>
           </ol>
@@ -180,7 +184,7 @@ export const MonsoonCarePage: React.FC = () => {
         {/* H1 Heading */}
         <header className="mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0B1F3A] tracking-tight leading-tight mb-4">
-            Monsoon Car Care Tips: 12 Ways to Protect Your Car This Rainy Season
+            Monsoon Car Care Tips India: 12 Rainy Season Protection Steps
           </h1>
 
           {/* Meta Details */}
@@ -204,7 +208,7 @@ export const MonsoonCarePage: React.FC = () => {
 
           {/* Social Share Buttons */}
           <ShareButtons
-            title="Monsoon Car Care Tips: 12 Ways to Protect Your Car"
+            title="Monsoon Car Care Tips India: 12 Rainy Season Protection Steps"
             url="/monsoon-car-care-tips"
           />
         </header>
@@ -212,7 +216,7 @@ export const MonsoonCarePage: React.FC = () => {
         {/* Featured Image */}
         <SmartImage
           src="/images/monsoon-car-care-tips.webp"
-          alt="Car windshield wipers clearing heavy rain on wet asphalt road during monsoon downpours"
+          alt="Car windshield wipers clearing heavy rain on wet asphalt road for monsoon car care tips India"
           width={1200}
           height={630}
           loading="eager"
@@ -221,7 +225,7 @@ export const MonsoonCarePage: React.FC = () => {
 
         {/* First 100 Words with Main Keyword */}
         <div className="text-lg text-slate-700 leading-relaxed font-normal mb-8">
-          The arrival of the Indian rainy season brings cool relief from harsh summer heat, but torrential downpours, flash floods, and inundated roads pose immense hazards to automobiles. Practicing proactive <strong>monsoon car care tips</strong> is essential to prevent catastrophic engine failure, rust corrosion, electrical short circuits, and dangerous highway aquaplaning. In this manual, our automotive experts share twelve crucial techniques to safeguard your vehicle throughout heavy Indian monsoons.
+          The arrival of the Indian rainy season brings cool relief from harsh summer heat, but torrential downpours and inundated roads pose severe hazards to automobiles. Practicing proactive <strong>monsoon car care tips India</strong> motorists rely on is essential to prevent costly engine damage, rust corrosion, and dangerous aquaplaning. From timely rainy season car maintenance to effective car wiper blade care, this comprehensive checklist ensures your vehicle stays dependable all monsoon.
         </div>
 
         {/* Table of Contents */}
@@ -249,11 +253,11 @@ export const MonsoonCarePage: React.FC = () => {
           {/* Section 2: Tips 1-3 */}
           <section id="check-tyres-and-brakes" className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] tracking-tight">
-              How Do You Check Tyres and Brakes for the Rainy Season?
+              Why Is Rainy Season Car Maintenance Critical for Tyres and Brakes?
             </h2>
             {/* Direct Answer Paragraph (40-60 words) */}
             <p className="bg-orange-50/70 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg font-medium text-slate-800 leading-relaxed">
-              To check tyres and brakes for the rainy season, measure tyre tread depth to verify it exceeds 2.5 mm, inspect brake pads for at least 4 mm thickness, and ensure brake fluid is clear of moisture contamination. Healthy tyre channels actively channel standing water outward to stop aquaplaning.
+              Timely rainy season car maintenance for tyres and brakes requires checking that tyre tread depth exceeds 2.5 mm, inspecting brake pad friction surfaces, and flushing moisture-contaminated brake fluid. Well-maintained tread channels actively pump standing road water away to avoid dangerous hydroplaning.
             </p>
 
             <div className="space-y-6 pt-2">
@@ -289,7 +293,7 @@ export const MonsoonCarePage: React.FC = () => {
           {/* Section 3: Tips 4-5 */}
           <section id="replace-wipers-lights" className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] tracking-tight">
-              When Should You Replace Wipers and Check Lights?
+              How Do You Master Car Wiper Blade Care and Visibility in Rain?
             </h2>
             {/* Direct Answer Paragraph (40-60 words) */}
             <p className="bg-orange-50/70 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg font-medium text-slate-800 leading-relaxed">
@@ -526,10 +530,10 @@ export const MonsoonCarePage: React.FC = () => {
           {/* Conclusion */}
           <section className="bg-slate-100 p-6 rounded-2xl border border-slate-200 space-y-3">
             <h2 className="text-xl font-bold text-slate-900">
-              Wrapping Up Your Monsoon Vehicle Protection
+              Wrapping Up Your Monsoon Car Care Tips India Checklist
             </h2>
             <p className="text-sm text-slate-700 leading-relaxed">
-              In conclusion, implementing these proven <strong>monsoon car care tips</strong> guarantees that your automobile survives heavy Indian downpours without unexpected breakdowns or expensive workshop overhauls. Keep your tyres well-grooved, replace worn wipers early, protect your chassis against rust, and remember the golden rule: never crank a stalled vehicle in standing floodwaters.
+              In conclusion, implementing these proven <strong>monsoon car care tips India</strong> automotive experts recommend guarantees that your automobile survives heavy Indian downpours without unexpected breakdowns or expensive workshop overhauls. Keep up with rainy season car maintenance, prioritize car wiper blade care, protect your chassis against rust, and remember the golden rule: never crank a stalled vehicle in standing floodwaters.
             </p>
             <p className="text-xs text-slate-500 italic">
               Prices and costs vary by city and model; check with your dealer.

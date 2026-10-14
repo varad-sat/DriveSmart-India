@@ -142,6 +142,82 @@ export const SEO_DATA: Record<string, PageSEO> = {
     metaDescription: 'Get in touch with contact DriveSmart India. Reach out for expert car buying advice, ask a car question, or request assistance for your next car purchase.',
   },
 
+  // Additional Guides
+  '/first-car-buying-guide-india-step-by-step': {
+    path: '/first-car-buying-guide-india-step-by-step',
+    mainKeyword: 'first car buying guide India',
+    relatedKeywords: ['first time car buyer tips', 'budget for first car'],
+    title: 'First Car Buying Guide India: 10 Steps | DriveSmart',
+    metaDescription: 'Comprehensive first car buying guide India. Discover first time car buyer tips, budget for first car planning, test drives, and dealership inspection advice.',
+  },
+  '/first-car-buying-guide': {
+    path: '/first-car-buying-guide',
+    mainKeyword: 'first car buying guide India',
+    relatedKeywords: ['first time car buyer tips', 'budget for first car'],
+    title: 'First Car Buying Guide India: 10 Steps | DriveSmart',
+    metaDescription: 'Comprehensive first car buying guide India. Discover first time car buyer tips, budget for first car planning, test drives, and dealership inspection advice.',
+  },
+
+  '/monsoon-car-care-tips-rainy-season-protection': {
+    path: '/monsoon-car-care-tips-rainy-season-protection',
+    mainKeyword: 'monsoon car care tips India',
+    relatedKeywords: ['rainy season car maintenance', 'car wiper blade care'],
+    title: 'Monsoon Car Care Tips India: Rainy Season | DriveSmart',
+    metaDescription: 'Protect your vehicle with monsoon car care tips India. Learn rainy season car maintenance, brake drying, and car wiper blade care for safe monsoon driving.',
+  },
+  '/monsoon-car-care-tips': {
+    path: '/monsoon-car-care-tips',
+    mainKeyword: 'monsoon car care tips India',
+    relatedKeywords: ['rainy season car maintenance', 'car wiper blade care'],
+    title: 'Monsoon Car Care Tips India: Rainy Season | DriveSmart',
+    metaDescription: 'Protect your vehicle with monsoon car care tips India. Learn rainy season car maintenance, brake drying, and car wiper blade care for safe monsoon driving.',
+  },
+
+  '/car-insurance-guide-india-zero-dep-explained': {
+    path: '/car-insurance-guide-india-zero-dep-explained',
+    mainKeyword: 'car insurance guide India',
+    relatedKeywords: ['zero dep insurance benefits', 'comprehensive car insurance'],
+    title: 'Car Insurance Guide India: Zero Dep Policy | DriveSmart',
+    metaDescription: 'Complete car insurance guide India: explore zero dep insurance benefits, RTI add-ons, and how to buy comprehensive car insurance online to save up to 30%.',
+  },
+  '/car-insurance-guide-india': {
+    path: '/car-insurance-guide-india',
+    mainKeyword: 'car insurance guide India',
+    relatedKeywords: ['zero dep insurance benefits', 'comprehensive car insurance'],
+    title: 'Car Insurance Guide India: Zero Dep Policy | DriveSmart',
+    metaDescription: 'Complete car insurance guide India: explore zero dep insurance benefits, RTI add-ons, and how to buy comprehensive car insurance online to save up to 30%.',
+  },
+
+  '/manual-vs-automatic-cars-india-amt-cvt-dct': {
+    path: '/manual-vs-automatic-cars-india-amt-cvt-dct',
+    mainKeyword: 'manual vs automatic cars India',
+    relatedKeywords: ['AMT vs CVT vs DCT', 'automatic car mileage India'],
+    title: 'Manual vs Automatic Cars India: AMT vs DCT | DriveSmart',
+    metaDescription: 'Compare manual vs automatic cars India for city traffic and highways. Learn AMT vs CVT vs DCT differences and compare realistic automatic car mileage India.',
+  },
+  '/manual-vs-automatic-cars-india': {
+    path: '/manual-vs-automatic-cars-india',
+    mainKeyword: 'manual vs automatic cars India',
+    relatedKeywords: ['AMT vs CVT vs DCT', 'automatic car mileage India'],
+    title: 'Manual vs Automatic Cars India: AMT vs DCT | DriveSmart',
+    metaDescription: 'Compare manual vs automatic cars India for city traffic and highways. Learn AMT vs CVT vs DCT differences and compare realistic automatic car mileage India.',
+  },
+
+  '/car-mileage-tips-india-boost-fuel-economy': {
+    path: '/car-mileage-tips-india-boost-fuel-economy',
+    mainKeyword: 'car mileage tips India',
+    relatedKeywords: ['how to increase car mileage', 'fuel economy driving tips'],
+    title: 'Car Mileage Tips India: Boost Fuel Economy | DriveSmart',
+    metaDescription: 'Proven car mileage tips India: discover how to increase car mileage with cold tyre pressure checks, cruising speeds, and practical fuel economy driving tips.',
+  },
+  '/car-mileage-tips-india': {
+    path: '/car-mileage-tips-india',
+    mainKeyword: 'car mileage tips India',
+    relatedKeywords: ['how to increase car mileage', 'fuel economy driving tips'],
+    title: 'Car Mileage Tips India: Boost Fuel Economy | DriveSmart',
+    metaDescription: 'Proven car mileage tips India: discover how to increase car mileage with cold tyre pressure checks, cruising speeds, and practical fuel economy driving tips.',
+  },
+
   // 404 Page
   '/404': {
     path: '/404',

@@ -6,6 +6,7 @@ import { TableOfContents } from '../components/TableOfContents';
 import { RelatedArticles } from '../components/RelatedArticles';
 import { ReadingProgressBar } from '../components/ReadingProgressBar';
 import { ShareButtons } from '../components/ShareButtons';
+import { SEO_DATA } from '../data/seoKeywords';
 import {
   ShieldCheck,
   CheckCircle,
@@ -111,14 +112,17 @@ export const InsuranceGuidePage: React.FC = () => {
     },
   ];
 
+  const seo = SEO_DATA['/car-insurance-guide-india'];
+
   return (
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="Car Insurance Guide India: Zero Dep Explained | DriveSmart"
-        description="Learn how to choose car insurance in India: understand Zero Depreciation, Return to Invoice, and Engine Protect riders, plus how to save 30% online."
+        title={seo.title}
+        description={seo.metaDescription}
         canonicalUrl="https://drivesmart-india.vercel.app/car-insurance-guide-india-zero-dep-explained"
         ogImage="https://drivesmart-india.vercel.app/images/car-insurance-guide-india.webp"
+        keywords={`${seo.mainKeyword}, ${seo.relatedKeywords.join(', ')}`}
         type="article"
         schema={schema}
       />
@@ -174,7 +178,7 @@ export const InsuranceGuidePage: React.FC = () => {
         {/* Featured Image */}
         <SmartImage
           src="/images/car-insurance-guide-india.webp"
-          alt="Car insurance policy documents and contract paperwork with signature"
+          alt="Car insurance policy documents and contract paperwork for car insurance guide India"
           width={1200}
           height={630}
           loading="eager"
@@ -183,7 +187,7 @@ export const InsuranceGuidePage: React.FC = () => {
 
         {/* Introduction */}
         <div className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal mb-8">
-          Purchasing insurance for your motor vehicle is one of the biggest ongoing ownership expenses after fuel. Yet thousands of Indian motorists blindly accept bloated dealership insurance quotes with high margins and critical coverage gaps. In this comprehensive <strong>car insurance guide India</strong>, we explain the must-have add-ons including Zero Depreciation, Return to Invoice (RTI), and Engine Protection, ensuring full financial security without unnecessary markups.
+          Purchasing insurance for your motor vehicle is one of the biggest ongoing ownership expenses after fuel. Yet thousands of Indian motorists blindly accept bloated dealership insurance quotes with high margins and critical coverage gaps. In this comprehensive <strong>car insurance guide India</strong>, we explain how to buy comprehensive car insurance online and leverage zero dep insurance benefits alongside Return to Invoice (RTI) and Engine Protection, ensuring full financial security without unnecessary markups.
         </div>
 
         <TableOfContents items={tocItems} />
@@ -192,7 +196,7 @@ export const InsuranceGuidePage: React.FC = () => {
           {/* Section 1 */}
           <section id="why-insurance-essential" className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-              Why Is Car Insurance Critical in India?
+              Why Is Comprehensive Car Insurance Critical in India?
             </h2>
             <p className="bg-orange-50/70 dark:bg-orange-950/30 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg font-medium text-slate-800 dark:text-slate-200 leading-relaxed">
               Car insurance is critical in India because standard motor policies legally protect you against catastrophic third-party liabilities under the Motor Vehicles Act, while comprehensive own-damage policies absorb massive financial losses from road accidents, natural disasters, theft, and urban flash flooding.
@@ -215,7 +219,7 @@ export const InsuranceGuidePage: React.FC = () => {
           {/* Section 2 */}
           <section id="zero-dep-explained" className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-              What Is Zero Depreciation Car Insurance?
+              What Are the Core Zero Dep Insurance Benefits in India?
             </h2>
             <p className="bg-orange-50/70 dark:bg-orange-950/30 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg font-medium text-slate-800 dark:text-slate-200 leading-relaxed">
               Zero Depreciation (Nil-Dep) car insurance is an add-on rider that guarantees full reimbursement on replacement parts during accident claims without deducting mandatory depreciation penalties of up to 50% on plastic, rubber, nylon, and glass components.
@@ -339,6 +343,16 @@ export const InsuranceGuidePage: React.FC = () => {
                 </tbody>
               </table>
             </div>
+          </section>
+
+          {/* Conclusion */}
+          <section className="bg-slate-100 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+              Final Takeaway: Making the Most of this Car Insurance Guide India
+            </h2>
+            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              In conclusion, following this comprehensive <strong>car insurance guide India</strong> ensures you do not overpay showroom brokers while maximizing your protection on Indian roads. Compare quotes across reputable IRDAI-registered online platforms, always lock in your zero dep insurance benefits for at least the first 5 years, and retain active comprehensive car insurance coverage for true peace of mind.
+            </p>
           </section>
 
           {/* Section 8: FAQ */}

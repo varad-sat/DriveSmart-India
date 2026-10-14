@@ -6,6 +6,7 @@ import { TableOfContents } from '../components/TableOfContents';
 import { RelatedArticles } from '../components/RelatedArticles';
 import { ReadingProgressBar } from '../components/ReadingProgressBar';
 import { ShareButtons } from '../components/ShareButtons';
+import { SEO_DATA } from '../data/seoKeywords';
 import {
   Calendar,
   Clock,
@@ -159,14 +160,17 @@ export const FirstCarGuidePage: React.FC = () => {
     },
   ];
 
+  const seo = SEO_DATA['/first-car-buying-guide'];
+
   return (
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="First Car Buying Guide India: 10 Key Steps | DriveSmart"
-        description="Our first car buying guide covers budgeting, car loans, test drives and insurance in 10 easy steps. Buy your first car with confidence. Read now."
+        title={seo.title}
+        description={seo.metaDescription}
         canonicalUrl="https://drivesmart-india.vercel.app/first-car-buying-guide-india-step-by-step"
         ogImage="https://drivesmart-india.vercel.app/images/first-car-buying-guide.webp"
+        keywords={`${seo.mainKeyword}, ${seo.relatedKeywords.join(', ')}`}
         type="article"
         schema={schema}
       />
@@ -183,7 +187,7 @@ export const FirstCarGuidePage: React.FC = () => {
             <li className="flex items-center space-x-2">
               <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
               <span className="text-slate-800 font-medium">
-                First Car Buying Guide
+                First Car Buying Guide India
               </span>
             </li>
           </ol>
@@ -192,7 +196,7 @@ export const FirstCarGuidePage: React.FC = () => {
         {/* H1 Heading */}
         <header className="mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0B1F3A] tracking-tight leading-tight mb-4">
-            First Car Buying Guide: 10 Simple Steps for Indian Buyers
+            First Car Buying Guide India: 10 Simple Steps for Beginners
           </h1>
 
           {/* Meta Details */}
@@ -216,7 +220,7 @@ export const FirstCarGuidePage: React.FC = () => {
 
           {/* Social Share Buttons */}
           <ShareButtons
-            title="First Car Buying Guide: 10 Steps for Indian Buyers"
+            title="First Car Buying Guide India: 10 Steps for Beginners"
             url="/first-car-buying-guide"
           />
         </header>
@@ -224,7 +228,7 @@ export const FirstCarGuidePage: React.FC = () => {
         {/* Featured Image */}
         <SmartImage
           src="/images/first-car-buying-guide.webp"
-          alt="Modern car showroom with brand new vehicle on display for first time buyers"
+          alt="Modern car showroom with brand new vehicle on display for first car buying guide India"
           width={1200}
           height={630}
           loading="eager"
@@ -233,7 +237,7 @@ export const FirstCarGuidePage: React.FC = () => {
 
         {/* First 100 Words with Main Keyword */}
         <div className="text-lg text-slate-700 leading-relaxed font-normal mb-8">
-          Stepping into an automobile dealership for the first time is thrilling, but without a proven <strong>first car buying guide</strong>, enthusiastic Indian buyers frequently fall into expensive traps. Between aggressive showroom sales tactics, high dealer insurance margins, and confusing on-road quotes, it is easy to overspend. In this comprehensive manual, we walk you through a foolproof 10-step roadmap covering genuine budgets, loan structures, thorough test drives, and pre-delivery inspections across Indian cities.
+          Stepping into an automobile dealership for the first time is thrilling, but without a proven <strong>first car buying guide India</strong>, enthusiastic buyers frequently face unforeseen costs. Gathering verified first time car buyer tips and establishing a disciplined budget for first car ownership ensures you choose the right model without showroom stress. In this 10-step handbook, we walk you through loans, test drives, and pre-delivery checks.
         </div>
 
         {/* Table of Contents */}
@@ -244,7 +248,7 @@ export const FirstCarGuidePage: React.FC = () => {
           {/* Step 1 */}
           <section id="step-1-budgeting" className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] tracking-tight">
-              Step 1: How Much Should You Spend on Your First Car?
+              Step 1: What Budget for First Car and Loan EMI Should You Plan?
             </h2>
             {/* Direct Answer Paragraph (40-60 words) */}
             <p className="bg-orange-50/70 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg font-medium text-slate-800 leading-relaxed">
@@ -319,7 +323,7 @@ export const FirstCarGuidePage: React.FC = () => {
           {/* Step 5 */}
           <section id="step-5-loan-tips" className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] tracking-tight">
-              Step 5: What Are the Best Car Loan Tips for First-Time Buyers?
+              Step 5: What Are the Top First Time Car Buyer Tips for Bank Loans?
             </h2>
             {/* Direct Answer Paragraph (40-60 words) */}
             <p className="bg-orange-50/70 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg font-medium text-slate-800 leading-relaxed">
@@ -532,10 +536,10 @@ export const FirstCarGuidePage: React.FC = () => {
           {/* Conclusion */}
           <section className="bg-slate-100 p-6 rounded-2xl border border-slate-200 space-y-3">
             <h2 className="text-xl font-bold text-slate-900">
-              Final Words on Your First Car Buying Journey
+              Final Takeaway on this First Car Buying Guide India
             </h2>
             <p className="text-sm text-slate-700 leading-relaxed">
-              In conclusion, following this comprehensive <strong>first car buying guide</strong> equips you with the financial clarity and analytical discipline required to navigate Indian automotive dealerships smoothly. After bringing your new ride home, protect your valuable asset from wet-weather hazards by reading our guide to{' '}
+              In conclusion, following this comprehensive <strong>first car buying guide India</strong> equips you with the financial clarity and analytical discipline required to navigate automotive dealerships smoothly. Balancing your budget for first car targets with verified first time car buyer tips will prevent buyers remorse and secure long-term value. After bringing your new ride home, protect your valuable asset from wet-weather hazards by reading our guide to{' '}
               <Link
                 to="/monsoon-car-care-tips-rainy-season-protection"
                 className="font-bold text-[#FF6B1A] underline hover:text-[#e05b12]"

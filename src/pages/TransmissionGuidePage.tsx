@@ -6,6 +6,7 @@ import { TableOfContents } from '../components/TableOfContents';
 import { RelatedArticles } from '../components/RelatedArticles';
 import { ReadingProgressBar } from '../components/ReadingProgressBar';
 import { ShareButtons } from '../components/ShareButtons';
+import { SEO_DATA } from '../data/seoKeywords';
 import {
   Cog,
   HelpCircle,
@@ -110,14 +111,17 @@ export const TransmissionGuidePage: React.FC = () => {
     },
   ];
 
+  const seo = SEO_DATA['/manual-vs-automatic-cars-india'];
+
   return (
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="Manual vs Automatic Cars in India: AMT vs DCT | DriveSmart"
-        description="Manual vs automatic cars in India: compare AMT, CVT, DCT, and Torque Converter gearboxes for mileage, maintenance, city ease, and reliability."
+        title={seo.title}
+        description={seo.metaDescription}
         canonicalUrl="https://drivesmart-india.vercel.app/manual-vs-automatic-cars-india-amt-cvt-dct"
         ogImage="https://drivesmart-india.vercel.app/images/manual-vs-automatic-cars-india.webp"
+        keywords={`${seo.mainKeyword}, ${seo.relatedKeywords.join(', ')}`}
         type="article"
         schema={schema}
       />
@@ -170,7 +174,7 @@ export const TransmissionGuidePage: React.FC = () => {
 
         <SmartImage
           src="/images/manual-vs-automatic-cars-india.webp"
-          alt="Modern car interior showing automatic transmission gear selector and center console"
+          alt="Modern car interior showing automatic transmission gear selector for manual vs automatic cars India"
           width={1200}
           height={630}
           loading="eager"
@@ -178,7 +182,7 @@ export const TransmissionGuidePage: React.FC = () => {
         />
 
         <div className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal mb-8">
-          With Indian metropolitan traffic growing more congested each year, the debate over <strong>manual vs automatic cars in India</strong> has evolved. Once dismissed as gas-guzzlers with expensive servicing, modern automatic transmissions have become mainstream. However, choosing between an AMT, CVT, DCT, or Torque Converter requires understanding their real-world trade-offs in city crawls and highway overtakes.
+          With Indian metropolitan traffic growing more congested each year, the debate over <strong>manual vs automatic cars in India</strong> has evolved. Once dismissed as gas-guzzlers with expensive servicing, modern automatics are mainstream. Comparing AMT vs CVT vs DCT systems allows you to pick the ideal gearbox for stop-and-go ease while preserving competitive automatic car mileage India motorists demand.
         </div>
 
         <TableOfContents items={tocItems} />
@@ -262,7 +266,7 @@ export const TransmissionGuidePage: React.FC = () => {
           {/* Section 6 */}
           <section id="mileage-comparison" className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-              Do Automatic Cars Give Lower Mileage in India?
+              How Does Automatic Car Mileage India Compare With Manual Efficiency?
             </h2>
             <p className="bg-orange-50/70 dark:bg-orange-950/30 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg font-medium text-slate-800 dark:text-slate-200 leading-relaxed">
               Modern automatic cars in India typically yield within five to ten percent of manual fuel efficiency. While older 4-speed automatics suffered heavy fuel penalties, contemporary AMTs, CVTs, and multi-speed torque converters optimize engine RPMs efficiently, often beating aggressive human manual drivers in real-world commuting.
@@ -282,7 +286,7 @@ export const TransmissionGuidePage: React.FC = () => {
           {/* Section 7: Comparison Table */}
           <section id="gearbox-comparison-table" className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-              Automatic Gearbox Comparison Table
+              AMT vs CVT vs DCT: Automatic Gearbox Comparison Table
             </h2>
             <div className="overflow-x-auto my-6">
               <table className="w-full text-left text-sm border-collapse rounded-xl overflow-hidden border border-slate-300 dark:border-slate-700">
@@ -327,6 +331,16 @@ export const TransmissionGuidePage: React.FC = () => {
                 </tbody>
               </table>
             </div>
+          </section>
+
+          {/* Conclusion */}
+          <section className="bg-slate-100 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+              Final Takeaway: Choosing Between Manual vs Automatic Cars in India
+            </h2>
+            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              In conclusion, resolving the debate on <strong>manual vs automatic cars in India</strong> hinges on your daily travel patterns and budget. If bumper-to-bumper office crawls dominate your routine, an AMT, CVT, or torque converter eliminates clutch fatigue, while manual transmissions still hold merit for absolute purchase savings. Always evaluate real-world automatic car mileage India benchmarks before signing your booking contract.
+            </p>
           </section>
 
           {/* Section 8: FAQ */}

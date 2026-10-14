@@ -6,6 +6,7 @@ import { TableOfContents } from '../components/TableOfContents';
 import { RelatedArticles } from '../components/RelatedArticles';
 import { ReadingProgressBar } from '../components/ReadingProgressBar';
 import { ShareButtons } from '../components/ShareButtons';
+import { SEO_DATA } from '../data/seoKeywords';
 import {
   Gauge,
   HelpCircle,
@@ -110,14 +111,17 @@ export const MileageTipsPage: React.FC = () => {
     },
   ];
 
+  const seo = SEO_DATA['/car-mileage-tips-india'];
+
   return (
     <>
       <ReadingProgressBar />
       <SEOHead
-        title="Car Mileage Tips India: Boost Fuel Economy | DriveSmart"
-        description="Learn how to increase car mileage in India: practical tips for tyre pressure, AC usage, highway cruising speeds, and stop-and-go city driving."
+        title={seo.title}
+        description={seo.metaDescription}
         canonicalUrl="https://drivesmart-india.vercel.app/car-mileage-tips-india-boost-fuel-economy"
         ogImage="https://drivesmart-india.vercel.app/images/car-mileage-tips-india.webp"
+        keywords={`${seo.mainKeyword}, ${seo.relatedKeywords.join(', ')}`}
         type="article"
         schema={schema}
       />
@@ -170,7 +174,7 @@ export const MileageTipsPage: React.FC = () => {
 
         <SmartImage
           src="/images/car-mileage-tips-india.webp"
-          alt="Modern car digital dashboard and speedometer cruising on the expressway"
+          alt="Modern car digital dashboard and speedometer cruising on the expressway for car mileage tips India"
           width={1200}
           height={630}
           loading="eager"
@@ -178,7 +182,7 @@ export const MileageTipsPage: React.FC = () => {
         />
 
         <div className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal mb-8">
-          With petrol touching ₹100+ per litre across most Indian states, mastering practical <strong>car mileage tips India</strong> can save motorists between ₹15,000 and ₹30,000 in annual fuel bills. Many car owners blame manufacturer ARAI lab claims when real-world efficiency drops, but simple driving modifications and basic vehicle checks can quickly restore peak kilometers per litre.
+          With petrol touching ₹100+ per litre across most Indian states, mastering practical <strong>car mileage tips India</strong> can save motorists between ₹15,000 and ₹30,000 in annual fuel bills. Discovering how to increase car mileage through sensible driving techniques and fuel economy driving tips can quickly restore peak kilometers per litre.
         </div>
 
         <TableOfContents items={tocItems} />
@@ -187,7 +191,7 @@ export const MileageTipsPage: React.FC = () => {
           {/* Section 1 */}
           <section id="why-mileage-drops" className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-              Why Does Real-World Car Mileage Drop in India?
+              Why Does Car Mileage Drop and How to Increase Car Mileage?
             </h2>
             <p className="bg-orange-50/70 dark:bg-orange-950/30 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg font-medium text-slate-800 dark:text-slate-200 leading-relaxed">
               Real-world car mileage drops in India primarily due to extreme stop-and-go city congestion, prolonged AC compressor usage in 40°C heat, under-inflated tyres, clogged air filters from road dust, and aggressive throttle-and-brake driving habits.
@@ -210,7 +214,7 @@ export const MileageTipsPage: React.FC = () => {
           {/* Section 2 */}
           <section id="tyre-pressure-impact" className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1F3A] dark:text-white tracking-tight">
-              How Much Does Tyre Pressure Affect Fuel Economy?
+              Fuel Economy Driving Tips: How Much Does Tyre Pressure Affect Mileage?
             </h2>
             <p className="bg-orange-50/70 dark:bg-orange-950/30 border-l-4 border-[#FF6B1A] p-4 rounded-r-lg font-medium text-slate-800 dark:text-slate-200 leading-relaxed">
               Tyre pressure significantly impacts fuel economy: driving on tyres under-inflated by just 4 to 5 PSI increases rolling resistance and reduces mileage by three to five percent. Maintaining correct cold manufacturer pressures can save up to two full tanks of fuel annually.
@@ -351,6 +355,16 @@ export const MileageTipsPage: React.FC = () => {
                 </tbody>
               </table>
             </div>
+          </section>
+
+          {/* Conclusion */}
+          <section className="bg-slate-100 dark:bg-slate-900/60 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-3">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+              Final Takeaway: Applying Proven Car Mileage Tips India
+            </h2>
+            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              In conclusion, making these essential <strong>car mileage tips India</strong> a natural part of your driving routine pays substantial dividends at every fuel refill. Consistently monitoring tyre pressures, maintaining smooth expressway cruising velocities, and applying smart fuel economy driving tips will effortlessly keep your annual running budget under control.
+            </p>
           </section>
 
           {/* Section 8: FAQ */}
