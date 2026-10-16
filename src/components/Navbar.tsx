@@ -269,10 +269,11 @@ export const Navbar: React.FC = () => {
             <Link
               to="/compare-cars-in-india"
               className="relative p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
-              title="Compare Cars"
+              title="Compare Cars in India"
               aria-label="View Car Comparison"
             >
               <Scale className="w-5 h-5" />
+              <span className="sr-only">Compare Cars in India</span>
               {compareList.length > 0 && (
                 <span className="absolute -top-1 -right-1 bg-[#FF6B1A] text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center shadow-xs">
                   {compareList.length}

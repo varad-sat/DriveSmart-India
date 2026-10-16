@@ -185,7 +185,7 @@ export const NewSuvsArticlePage: React.FC = () => {
                       to={`/cars/${car.seoSlug}`}
                       className="text-xs font-bold text-[#FF6B1A] hover:underline inline-flex items-center gap-1"
                     >
-                      <span>Full Specs</span>
+                      <span>View {car.name} specs</span>
                       <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>

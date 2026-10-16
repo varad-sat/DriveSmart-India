@@ -349,7 +349,7 @@ export const EmiCalculatorPage: React.FC = () => {
             {/* Quick Action Link */}
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2">
               <Link
-                to="/first-car-buying-guide#step-5-loan-tips"
+                to="/first-car-buying-guide-india-step-by-step#step-5-loan-tips"
                 className="w-full inline-flex items-center justify-center gap-2 bg-[#0B1F3A] hover:bg-[#132c4e] text-white text-xs font-bold py-3 px-4 rounded-xl transition-colors"
               >
                 <span>Read our car loan tips for first-time buyers</span>

@@ -157,7 +157,7 @@ export const BlogListingPage: React.FC = () => {
                     to={item.to}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B1A] hover:text-[#e05b12] pt-2"
                   >
-                    <span>Read Article</span>
+                    <span>Read full guide: {item.title}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
